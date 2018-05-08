@@ -1,4 +1,8 @@
+.. note::
+    :class: sphx-glr-download-link-note
 
+    Click :ref:`here <sphx_glr_download_auto_examples_applications_plot_topic_classication.py>` to download the full example code
+.. rst-class:: sphx-glr-example-title
 
 .. _sphx_glr_auto_examples_applications_plot_topic_classication.py:
 
@@ -174,16 +178,18 @@ slightly better.
 
     pre       rec       spe        f1       geo       iba       sup
 
-              0       0.70      0.90      0.88      0.79      0.89      0.79       319
-              1       0.97      0.85      0.99      0.91      0.92      0.83       389
-              2       0.95      0.89      0.98      0.92      0.94      0.87       394
-              3       0.78      0.73      0.95      0.76      0.84      0.68       251
+              0       0.70      0.89      0.88      0.79      0.89      0.79       319
+              1       0.98      0.80      0.99      0.88      0.89      0.78       389
+              2       0.93      0.91      0.97      0.92      0.94      0.88       394
+              3       0.78      0.74      0.95      0.76      0.84      0.69       251
 
-    avg / total       0.87      0.85      0.96      0.85      0.90      0.80      1353
+    avg / total       0.86      0.84      0.95      0.85      0.90      0.79      1353
 
 
-**Total running time of the script:** ( 0 minutes  15.401 seconds)
+**Total running time of the script:** ( 0 minutes  17.927 seconds)
 
+
+.. _sphx_glr_download_auto_examples_applications_plot_topic_classication.py:
 
 
 .. only :: html

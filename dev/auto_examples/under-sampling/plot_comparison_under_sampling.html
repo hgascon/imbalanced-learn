@@ -25,31 +25,21 @@
   
 
   
-  
     <link rel="stylesheet" href="../../_static/css/imbalanced-learn.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
-  
-
-  
-        <link rel="author" title="About these documents"
-              href="../../about.html"/>
-        <link rel="index" title="Index"
-              href="../../genindex.html"/>
-        <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="imbalanced-learn 0.4.0.dev0 documentation" href="../../index.html"/>
-        <link rel="up" title="General examples" href="../index.html"/>
-        <link rel="next" title="Release history" href="../../whats_new.html"/>
-        <link rel="prev" title="Illustration of the sample selection for the different NearMiss algorithms" href="plot_illustration_nearmiss.html"/> 
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Release history" href="../../whats_new.html" />
+    <link rel="prev" title="Illustration of the sample selection for the different NearMiss algorithms" href="plot_illustration_nearmiss.html" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -151,7 +141,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">imbalanced-learn</a>
@@ -159,9 +149,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -205,7 +196,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="comparison-of-the-different-under-sampling-algorithms">
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Click <a class="reference internal" href="#sphx-glr-download-auto-examples-under-sampling-plot-comparison-under-sampling-py"><span class="std std-ref">here</span></a> to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="comparison-of-the-different-under-sampling-algorithms">
 <span id="sphx-glr-auto-examples-under-sampling-plot-comparison-under-sampling-py"></span><h1>Comparison of the different under-sampling algorithms<a class="headerlink" href="#comparison-of-the-different-under-sampling-algorithms" title="Permalink to this headline">¶</a></h1>
 <p>The following example attends to make a qualitative comparison between the
 different under-sampling algorithms available in the imbalanced-learn package.</p>
@@ -340,9 +335,9 @@ nearest neighbors is the largest.</p>
 <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">create_dataset</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">),</span> <span class="n">class_sep</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
 
 <span class="n">ax_arr</span> <span class="o">=</span> <span class="p">((</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">),</span> <span class="p">(</span><span class="n">ax3</span><span class="p">,</span> <span class="n">ax4</span><span class="p">),</span> <span class="p">(</span><span class="n">ax5</span><span class="p">,</span> <span class="n">ax6</span><span class="p">))</span>
-<span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="n">sampler</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">ax_arr</span><span class="p">,</span> <span class="p">(</span><a href="../../generated/imblearn.under_sampling.NearMiss.html#imblearn.under_sampling.NearMiss" title="View documentation for imblearn.under_sampling.NearMiss"><span class="n">NearMiss</span></a><span class="p">(</span><span class="n">version</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
-                                <a href="../../generated/imblearn.under_sampling.NearMiss.html#imblearn.under_sampling.NearMiss" title="View documentation for imblearn.under_sampling.NearMiss"><span class="n">NearMiss</span></a><span class="p">(</span><span class="n">version</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
-                                <a href="../../generated/imblearn.under_sampling.NearMiss.html#imblearn.under_sampling.NearMiss" title="View documentation for imblearn.under_sampling.NearMiss"><span class="n">NearMiss</span></a><span class="p">(</span><span class="n">version</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">))):</span>
+<span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="n">sampler</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">ax_arr</span><span class="p">,</span> <span class="p">(</span><a href="../../generated/imblearn.under_sampling.NearMiss.html#imblearn.under_sampling.NearMiss" title="View documentation for imblearn.under_sampling.NearMiss"><span class="n">NearMiss</span></a><span class="p">(</span><span class="n">version</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+                                <a href="../../generated/imblearn.under_sampling.NearMiss.html#imblearn.under_sampling.NearMiss" title="View documentation for imblearn.under_sampling.NearMiss"><span class="n">NearMiss</span></a><span class="p">(</span><span class="n">version</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
+                                <a href="../../generated/imblearn.under_sampling.NearMiss.html#imblearn.under_sampling.NearMiss" title="View documentation for imblearn.under_sampling.NearMiss"><span class="n">NearMiss</span></a><span class="p">(</span><span class="n">version</span><span class="o">=</span><span class="mi">3</span><span class="p">))):</span>
     <span class="n">clf</span> <span class="o">=</span> <a href="../../generated/imblearn.pipeline.make_pipeline.html#imblearn.pipeline.make_pipeline" title="View documentation for imblearn.pipeline.make_pipeline"><span class="n">make_pipeline</span></a><span class="p">(</span><span class="n">sampler</span><span class="p">,</span> <a href="http://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html#sklearn.svm.LinearSVC" title="View documentation for sklearn.svm.LinearSVC"><span class="n">LinearSVC</span></a><span class="p">())</span>
     <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
     <span class="n">plot_decision_function</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">clf</span><span class="p">,</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
@@ -367,9 +362,9 @@ of the internal nearest neighors algorithm, increasing it at each iteration.</p>
 
 <span class="n">ax_arr</span> <span class="o">=</span> <span class="p">((</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">),</span> <span class="p">(</span><span class="n">ax3</span><span class="p">,</span> <span class="n">ax4</span><span class="p">),</span> <span class="p">(</span><span class="n">ax5</span><span class="p">,</span> <span class="n">ax6</span><span class="p">))</span>
 <span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="n">sampler</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">ax_arr</span><span class="p">,</span> <span class="p">(</span>
-        <a href="../../generated/imblearn.under_sampling.EditedNearestNeighbours.html#imblearn.under_sampling.EditedNearestNeighbours" title="View documentation for imblearn.under_sampling.EditedNearestNeighbours"><span class="n">EditedNearestNeighbours</span></a><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
-        <a href="../../generated/imblearn.under_sampling.RepeatedEditedNearestNeighbours.html#imblearn.under_sampling.RepeatedEditedNearestNeighbours" title="View documentation for imblearn.under_sampling.RepeatedEditedNearestNeighbours"><span class="n">RepeatedEditedNearestNeighbours</span></a><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
-        <a href="../../generated/imblearn.under_sampling.AllKNN.html#imblearn.under_sampling.AllKNN" title="View documentation for imblearn.under_sampling.AllKNN"><span class="n">AllKNN</span></a><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">allow_minority</span><span class="o">=</span><span class="bp">True</span><span class="p">))):</span>
+        <a href="../../generated/imblearn.under_sampling.EditedNearestNeighbours.html#imblearn.under_sampling.EditedNearestNeighbours" title="View documentation for imblearn.under_sampling.EditedNearestNeighbours"><span class="n">EditedNearestNeighbours</span></a><span class="p">(),</span>
+        <a href="../../generated/imblearn.under_sampling.RepeatedEditedNearestNeighbours.html#imblearn.under_sampling.RepeatedEditedNearestNeighbours" title="View documentation for imblearn.under_sampling.RepeatedEditedNearestNeighbours"><span class="n">RepeatedEditedNearestNeighbours</span></a><span class="p">(),</span>
+        <a href="../../generated/imblearn.under_sampling.AllKNN.html#imblearn.under_sampling.AllKNN" title="View documentation for imblearn.under_sampling.AllKNN"><span class="n">AllKNN</span></a><span class="p">(</span><span class="n">allow_minority</span><span class="o">=</span><span class="bp">True</span><span class="p">))):</span>
     <span class="n">clf</span> <span class="o">=</span> <a href="../../generated/imblearn.pipeline.make_pipeline.html#imblearn.pipeline.make_pipeline" title="View documentation for imblearn.pipeline.make_pipeline"><span class="n">make_pipeline</span></a><span class="p">(</span><span class="n">sampler</span><span class="p">,</span> <a href="http://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html#sklearn.svm.LinearSVC" title="View documentation for sklearn.svm.LinearSVC"><span class="n">LinearSVC</span></a><span class="p">())</span>
     <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
     <span class="n">plot_decision_function</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">clf</span><span class="p">,</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
@@ -397,7 +392,7 @@ nearest-neighbors to remove samples which do not agree with this rule.</p>
 <span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="n">sampler</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">ax_arr</span><span class="p">,</span> <span class="p">(</span>
         <a href="../../generated/imblearn.under_sampling.CondensedNearestNeighbour.html#imblearn.under_sampling.CondensedNearestNeighbour" title="View documentation for imblearn.under_sampling.CondensedNearestNeighbour"><span class="n">CondensedNearestNeighbour</span></a><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
         <a href="../../generated/imblearn.under_sampling.OneSidedSelection.html#imblearn.under_sampling.OneSidedSelection" title="View documentation for imblearn.under_sampling.OneSidedSelection"><span class="n">OneSidedSelection</span></a><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
-        <a href="../../generated/imblearn.under_sampling.NeighbourhoodCleaningRule.html#imblearn.under_sampling.NeighbourhoodCleaningRule" title="View documentation for imblearn.under_sampling.NeighbourhoodCleaningRule"><span class="n">NeighbourhoodCleaningRule</span></a><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">))):</span>
+        <a href="../../generated/imblearn.under_sampling.NeighbourhoodCleaningRule.html#imblearn.under_sampling.NeighbourhoodCleaningRule" title="View documentation for imblearn.under_sampling.NeighbourhoodCleaningRule"><span class="n">NeighbourhoodCleaningRule</span></a><span class="p">())):</span>
     <span class="n">clf</span> <span class="o">=</span> <a href="../../generated/imblearn.pipeline.make_pipeline.html#imblearn.pipeline.make_pipeline" title="View documentation for imblearn.pipeline.make_pipeline"><span class="n">make_pipeline</span></a><span class="p">(</span><span class="n">sampler</span><span class="p">,</span> <a href="http://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html#sklearn.svm.LinearSVC" title="View documentation for sklearn.svm.LinearSVC"><span class="n">LinearSVC</span></a><span class="p">())</span>
     <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
     <span class="n">plot_decision_function</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">clf</span><span class="p">,</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
@@ -434,8 +429,8 @@ removed.</p>
 </pre></div>
 </div>
 <img alt="../../_images/sphx_glr_plot_comparison_under_sampling_006.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_comparison_under_sampling_006.png" />
-<p><strong>Total running time of the script:</strong> ( 0 minutes  9.634 seconds)</p>
-<div class="sphx-glr-footer class sphx-glr-footer-example docutils container">
+<p><strong>Total running time of the script:</strong> ( 0 minutes  10.107 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-under-sampling-plot-comparison-under-sampling-py">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../../_downloads/plot_comparison_under_sampling.py" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_comparison_under_sampling.py</span></code></a></div>
 <div class="sphx-glr-download docutils container">
@@ -447,9 +442,7 @@ removed.</p>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -471,7 +464,7 @@ removed.</p>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -490,6 +483,7 @@ removed.</p>
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
             VERSION:'0.4.0.dev0',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -508,14 +502,13 @@ removed.</p>
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
   
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

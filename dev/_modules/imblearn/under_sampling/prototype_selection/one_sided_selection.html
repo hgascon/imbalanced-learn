@@ -25,29 +25,19 @@
   
 
   
-  
     <link rel="stylesheet" href="../../../../_static/css/imbalanced-learn.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../../../../_static/gallery.css" type="text/css" />
-  
-
-  
-        <link rel="author" title="About these documents"
-              href="../../../../about.html"/>
-        <link rel="index" title="Index"
-              href="../../../../genindex.html"/>
-        <link rel="search" title="Search" href="../../../../search.html"/>
-    <link rel="top" title="imbalanced-learn 0.4.0.dev0 documentation" href="../../../../index.html"/>
-        <link rel="up" title="Module code" href="../../../index.html"/> 
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/gallery.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../../../about.html" />
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
 
   
   <script src="../../../../_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -125,7 +115,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../../../index.html">imbalanced-learn</a>
@@ -133,9 +123,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -165,8 +156,6 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
-        
       </li>
     
   </ul>
@@ -194,46 +183,27 @@
 
 <span class="kn">from</span> <span class="nn">..base</span> <span class="k">import</span> <span class="n">BaseCleaningSampler</span>
 <span class="kn">from</span> <span class="nn">.tomek_links</span> <span class="k">import</span> <span class="n">TomekLinks</span>
+<span class="kn">from</span> <span class="nn">...utils</span> <span class="k">import</span> <span class="n">Substitution</span>
+<span class="kn">from</span> <span class="nn">...utils._docstring</span> <span class="k">import</span> <span class="n">_random_state_docstring</span>
 
 
-<div class="viewcode-block" id="OneSidedSelection"><a class="viewcode-back" href="../../../../generated/imblearn.under_sampling.OneSidedSelection.html#imblearn.under_sampling.OneSidedSelection">[docs]</a><span class="k">class</span> <span class="nc">OneSidedSelection</span><span class="p">(</span><span class="n">BaseCleaningSampler</span><span class="p">):</span>
+<div class="viewcode-block" id="OneSidedSelection"><a class="viewcode-back" href="../../../../generated/imblearn.under_sampling.OneSidedSelection.html#imblearn.under_sampling.OneSidedSelection">[docs]</a><span class="nd">@Substitution</span><span class="p">(</span>
+    <span class="n">sampling_strategy</span><span class="o">=</span><span class="n">BaseCleaningSampler</span><span class="o">.</span><span class="n">_sampling_strategy_docstring</span><span class="p">,</span>
+    <span class="n">random_state</span><span class="o">=</span><span class="n">_random_state_docstring</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">OneSidedSelection</span><span class="p">(</span><span class="n">BaseCleaningSampler</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Class to perform under-sampling based on one-sided selection method.</span>
 
 <span class="sd">    Read more in the :ref:`User Guide &lt;condensed_nearest_neighbors&gt;`.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
-<span class="sd">    ratio : str, dict, or callable, optional (default=&#39;auto&#39;)</span>
-<span class="sd">        Ratio to use for resampling the data set.</span>
-
-<span class="sd">        - If ``str``, has to be one of: (i) ``&#39;minority&#39;``: resample the</span>
-<span class="sd">          minority class; (ii) ``&#39;majority&#39;``: resample the majority class,</span>
-<span class="sd">          (iii) ``&#39;not minority&#39;``: resample all classes apart of the minority</span>
-<span class="sd">          class, (iv) ``&#39;all&#39;``: resample all classes, and (v) ``&#39;auto&#39;``:</span>
-<span class="sd">          correspond to ``&#39;all&#39;`` with for over-sampling methods and ``&#39;not</span>
-<span class="sd">          minority&#39;`` for under-sampling methods. The classes targeted will be</span>
-<span class="sd">          over-sampled or under-sampled to achieve an equal number of sample</span>
-<span class="sd">          with the majority or minority class.</span>
-<span class="sd">        - If ``dict``, the keys correspond to the targeted classes. The values</span>
-<span class="sd">          correspond to the desired number of samples.</span>
-<span class="sd">        - If callable, function taking ``y`` and returns a ``dict``. The keys</span>
-<span class="sd">          correspond to the targeted classes. The values correspond to the</span>
-<span class="sd">          desired number of samples.</span>
-
-<span class="sd">        .. warning::</span>
-<span class="sd">           This algorithm is a cleaning under-sampling method. When providing a</span>
-<span class="sd">           ``dict``, only the targeted classes will be used; the number of</span>
-<span class="sd">           samples will be discarded.</span>
+<span class="sd">    {sampling_strategy}</span>
 
 <span class="sd">    return_indices : bool, optional (default=False)</span>
 <span class="sd">        Whether or not to return the indices of the samples randomly</span>
 <span class="sd">        selected from the majority class.</span>
 
-<span class="sd">    random_state : int, RandomState instance or None, optional (default=None)</span>
-<span class="sd">        If int, ``random_state`` is the seed used by the random number</span>
-<span class="sd">        generator; If ``RandomState`` instance, random_state is the random</span>
-<span class="sd">        number generator; If ``None``, the random number generator is the</span>
-<span class="sd">        ``RandomState`` instance used by ``np.random``.</span>
+<span class="sd">    {random_state}</span>
 
 <span class="sd">    n_neighbors : int or object, optional (default=\</span>
 <span class="sd">KNeighborsClassifier(n_neighbors=1))</span>
@@ -247,6 +217,11 @@
 
 <span class="sd">    n_jobs : int, optional (default=1)</span>
 <span class="sd">        The number of threads to open if possible.</span>
+
+<span class="sd">    ratio : str, dict, or callable</span>
+<span class="sd">        .. deprecated:: 0.4</span>
+<span class="sd">           Use the parameter ``sampling_strategy`` instead. It will be removed</span>
+<span class="sd">           in 0.6.</span>
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
@@ -274,23 +249,25 @@
 <span class="sd">    &gt;&gt;&gt; X, y = make_classification(n_classes=2, class_sep=2,</span>
 <span class="sd">    ... weights=[0.1, 0.9], n_informative=3, n_redundant=1, flip_y=0,</span>
 <span class="sd">    ... n_features=20, n_clusters_per_class=1, n_samples=1000, random_state=10)</span>
-<span class="sd">    &gt;&gt;&gt; print(&#39;Original dataset shape {}&#39;.format(Counter(y)))</span>
-<span class="sd">    Original dataset shape Counter({1: 900, 0: 100})</span>
+<span class="sd">    &gt;&gt;&gt; print(&#39;Original dataset shape %s&#39; % Counter(y))</span>
+<span class="sd">    Original dataset shape Counter({{1: 900, 0: 100}})</span>
 <span class="sd">    &gt;&gt;&gt; oss = OneSidedSelection(random_state=42)</span>
 <span class="sd">    &gt;&gt;&gt; X_res, y_res = oss.fit_sample(X, y)</span>
-<span class="sd">    &gt;&gt;&gt; print(&#39;Resampled dataset shape {}&#39;.format(Counter(y_res)))</span>
-<span class="sd">    Resampled dataset shape Counter({1: 495, 0: 100})</span>
+<span class="sd">    &gt;&gt;&gt; print(&#39;Resampled dataset shape %s&#39; % Counter(y_res))</span>
+<span class="sd">    Resampled dataset shape Counter({{1: 495, 0: 100}})</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="OneSidedSelection.__init__"><a class="viewcode-back" href="../../../../generated/imblearn.under_sampling.OneSidedSelection.html#imblearn.under_sampling.OneSidedSelection.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
-                 <span class="n">ratio</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span>
+                 <span class="n">sampling_strategy</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span>
                  <span class="n">return_indices</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
                  <span class="n">random_state</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                  <span class="n">n_neighbors</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                  <span class="n">n_seeds_S</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-                 <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">(</span><span class="n">OneSidedSelection</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">ratio</span><span class="o">=</span><span class="n">ratio</span><span class="p">)</span>
+                 <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                 <span class="n">ratio</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">OneSidedSelection</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">sampling_strategy</span><span class="o">=</span><span class="n">sampling_strategy</span><span class="p">,</span> <span class="n">ratio</span><span class="o">=</span><span class="n">ratio</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">random_state</span> <span class="o">=</span> <span class="n">random_state</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">return_indices</span> <span class="o">=</span> <span class="n">return_indices</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">n_neighbors</span> <span class="o">=</span> <span class="n">n_neighbors</span>
@@ -345,12 +322,13 @@
         <span class="n">idx_under</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
 
         <span class="k">for</span> <span class="n">target_class</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
-            <span class="k">if</span> <span class="n">target_class</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">ratio_</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">target_class</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">sampling_strategy_</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
                 <span class="c1"># select a sample from the current class</span>
                 <span class="n">idx_maj</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flatnonzero</span><span class="p">(</span><span class="n">y</span> <span class="o">==</span> <span class="n">target_class</span><span class="p">)</span>
                 <span class="n">idx_maj_sample</span> <span class="o">=</span> <span class="n">idx_maj</span><span class="p">[</span><span class="n">random_state</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span>
-                        <span class="n">low</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="n">target_stats</span><span class="p">[</span><span class="n">target_class</span><span class="p">],</span>
-                        <span class="n">size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">n_seeds_S</span><span class="p">)]</span>
+                    <span class="n">low</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                    <span class="n">high</span><span class="o">=</span><span class="n">target_stats</span><span class="p">[</span><span class="n">target_class</span><span class="p">],</span>
+                    <span class="n">size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">n_seeds_S</span><span class="p">)]</span>
 
                 <span class="n">minority_class_indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flatnonzero</span><span class="p">(</span><span class="n">y</span> <span class="o">==</span> <span class="n">class_minority</span><span class="p">)</span>
                 <span class="n">C_indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">minority_class_indices</span><span class="p">,</span> <span class="n">idx_maj_sample</span><span class="p">)</span>
@@ -380,9 +358,10 @@
         <span class="n">y_resampled</span> <span class="o">=</span> <span class="n">safe_indexing</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">idx_under</span><span class="p">)</span>
 
         <span class="c1"># apply Tomek cleaning</span>
-        <span class="n">tl</span> <span class="o">=</span> <span class="n">TomekLinks</span><span class="p">(</span><span class="n">ratio</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">ratio_</span><span class="p">,</span> <span class="n">return_indices</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-        <span class="n">X_cleaned</span><span class="p">,</span> <span class="n">y_cleaned</span><span class="p">,</span> <span class="n">idx_cleaned</span> <span class="o">=</span> <span class="n">tl</span><span class="o">.</span><span class="n">fit_sample</span><span class="p">(</span><span class="n">X_resampled</span><span class="p">,</span>
-                                                          <span class="n">y_resampled</span><span class="p">)</span>
+        <span class="n">tl</span> <span class="o">=</span> <span class="n">TomekLinks</span><span class="p">(</span>
+            <span class="n">sampling_strategy</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">sampling_strategy_</span><span class="p">,</span> <span class="n">return_indices</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">X_cleaned</span><span class="p">,</span> <span class="n">y_cleaned</span><span class="p">,</span> <span class="n">idx_cleaned</span> <span class="o">=</span> <span class="n">tl</span><span class="o">.</span><span class="n">fit_sample</span><span class="p">(</span>
+            <span class="n">X_resampled</span><span class="p">,</span> <span class="n">y_resampled</span><span class="p">)</span>
 
         <span class="n">idx_under</span> <span class="o">=</span> <span class="n">safe_indexing</span><span class="p">(</span><span class="n">idx_under</span><span class="p">,</span> <span class="n">idx_cleaned</span><span class="p">)</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">return_indices</span><span class="p">:</span>
@@ -392,9 +371,7 @@
 </pre></div>
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -407,7 +384,7 @@
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -426,6 +403,7 @@
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../../',
             VERSION:'0.4.0.dev0',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -444,14 +422,13 @@
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
   
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

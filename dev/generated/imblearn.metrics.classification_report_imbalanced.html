@@ -25,31 +25,21 @@
   
 
   
-  
     <link rel="stylesheet" href="../_static/css/imbalanced-learn.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
-  
-
-  
-        <link rel="author" title="About these documents"
-              href="../about.html"/>
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="imbalanced-learn 0.4.0.dev0 documentation" href="../index.html"/>
-        <link rel="up" title="imbalanced-learn API" href="../api.html"/>
-        <link rel="next" title="imblearn.metrics.sensitivity_specificity_support" href="imblearn.metrics.sensitivity_specificity_support.html"/>
-        <link rel="prev" title="imblearn.pipeline.make_pipeline" href="imblearn.pipeline.make_pipeline.html"/> 
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="imblearn.metrics.sensitivity_specificity_support" href="imblearn.metrics.sensitivity_specificity_support.html" />
+    <link rel="prev" title="imblearn.pipeline.make_pipeline" href="imblearn.pipeline.make_pipeline.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -149,7 +139,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">imbalanced-learn</a>
@@ -157,9 +147,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -207,7 +198,7 @@
 <h1><a class="reference internal" href="../api.html#module-imblearn.metrics" title="imblearn.metrics"><code class="xref py py-mod docutils literal notranslate"><span class="pre">imblearn.metrics</span></code></a>.classification_report_imbalanced<a class="headerlink" href="#imblearn-metrics-classification-report-imbalanced" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="imblearn.metrics.classification_report_imbalanced">
-<code class="descclassname">imblearn.metrics.</code><code class="descname">classification_report_imbalanced</code><span class="sig-paren">(</span><em>y_true</em>, <em>y_pred</em>, <em>labels=None</em>, <em>target_names=None</em>, <em>sample_weight=None</em>, <em>digits=2</em>, <em>alpha=0.1</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/2e5956a/imblearn/metrics/classification.py#L756"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/imblearn/metrics/classification.html#classification_report_imbalanced"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.metrics.classification_report_imbalanced" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">imblearn.metrics.</code><code class="descname">classification_report_imbalanced</code><span class="sig-paren">(</span><em>y_true</em>, <em>y_pred</em>, <em>labels=None</em>, <em>target_names=None</em>, <em>sample_weight=None</em>, <em>digits=2</em>, <em>alpha=0.1</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/71ff0f6/imblearn/metrics/classification.py#L755"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/imblearn/metrics/classification.html#classification_report_imbalanced"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.metrics.classification_report_imbalanced" title="Permalink to this definition">¶</a></dt>
 <dd><p>Build a classification report based on metrics used with imbalanced
 dataset</p>
 <p>Specific metrics have been proposed to evaluate the classification
@@ -219,45 +210,41 @@ geometric mean.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>y_true</strong> : ndarray, shape (n_samples, )</p>
-<blockquote>
-<div><p>Ground truth (correct) target values.</p>
-</div></blockquote>
-<p><strong>y_pred</strong> : ndarray, shape (n_samples, )</p>
-<blockquote>
-<div><p>Estimated targets as returned by a classifier.</p>
-</div></blockquote>
-<p><strong>labels</strong> : list, optional</p>
-<blockquote>
-<div><p>The set of labels to include when <code class="docutils literal notranslate"><span class="pre">average</span> <span class="pre">!=</span> <span class="pre">'binary'</span></code>, and their
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>y_true</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ndarray, shape (n_samples, )</span></dt>
+<dd><p class="first last">Ground truth (correct) target values.</p>
+</dd>
+<dt><strong>y_pred</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ndarray, shape (n_samples, )</span></dt>
+<dd><p class="first last">Estimated targets as returned by a classifier.</p>
+</dd>
+<dt><strong>labels</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list, optional</span></dt>
+<dd><p class="first last">The set of labels to include when <code class="docutils literal notranslate"><span class="pre">average</span> <span class="pre">!=</span> <span class="pre">'binary'</span></code>, and their
 order if <code class="docutils literal notranslate"><span class="pre">average</span> <span class="pre">is</span> <span class="pre">None</span></code>. Labels present in the data can be
 excluded, for example to calculate a multiclass average ignoring a
 majority negative class, while labels not present in the data will
 result in 0 components in a macro average.</p>
-</div></blockquote>
-<p><strong>target_names</strong> : list of strings, optional</p>
-<blockquote>
-<div><p>Optional display names matching the labels (same order).</p>
-</div></blockquote>
-<p><strong>sample_weight</strong> : ndarray, shape (n_samples, )</p>
-<blockquote>
-<div><p>Sample weights.</p>
-</div></blockquote>
-<p><strong>digits</strong> : int, optional (default=2)</p>
-<blockquote>
-<div><p>Number of digits for formatting output floating point values</p>
-</div></blockquote>
-<p><strong>alpha</strong> : float, optional (default=0.1)</p>
-<blockquote>
-<div><p>Weighting factor.</p>
-</div></blockquote>
+</dd>
+<dt><strong>target_names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of strings, optional</span></dt>
+<dd><p class="first last">Optional display names matching the labels (same order).</p>
+</dd>
+<dt><strong>sample_weight</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ndarray, shape (n_samples, )</span></dt>
+<dd><p class="first last">Sample weights.</p>
+</dd>
+<dt><strong>digits</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, optional (default=2)</span></dt>
+<dd><p class="first last">Number of digits for formatting output floating point values</p>
+</dd>
+<dt><strong>alpha</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, optional (default=0.1)</span></dt>
+<dd><p class="first last">Weighting factor.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>report</strong> : string</p>
-<blockquote class="last">
-<div><p>Text summary of the precision, recall, specificity, geometric mean,
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>report</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">Text summary of the precision, recall, specificity, geometric mean,
 and index balanced accuracy.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -303,9 +290,7 @@ and index balanced accuracy.</p>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -327,7 +312,7 @@ and index balanced accuracy.</p>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -346,6 +331,7 @@ and index balanced accuracy.</p>
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
             VERSION:'0.4.0.dev0',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -364,14 +350,13 @@ and index balanced accuracy.</p>
     <script type="text/javascript" src="../_static/js/theme.js"></script>
   
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

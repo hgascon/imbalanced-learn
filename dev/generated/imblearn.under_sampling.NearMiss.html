@@ -25,31 +25,21 @@
   
 
   
-  
     <link rel="stylesheet" href="../_static/css/imbalanced-learn.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
-  
-
-  
-        <link rel="author" title="About these documents"
-              href="../about.html"/>
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="imbalanced-learn 0.4.0.dev0 documentation" href="../index.html"/>
-        <link rel="up" title="imbalanced-learn API" href="../api.html"/>
-        <link rel="next" title="imblearn.under_sampling.NeighbourhoodCleaningRule" href="imblearn.under_sampling.NeighbourhoodCleaningRule.html"/>
-        <link rel="prev" title="imblearn.under_sampling.InstanceHardnessThreshold" href="imblearn.under_sampling.InstanceHardnessThreshold.html"/> 
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="imblearn.under_sampling.NeighbourhoodCleaningRule" href="imblearn.under_sampling.NeighbourhoodCleaningRule.html" />
+    <link rel="prev" title="imblearn.under_sampling.InstanceHardnessThreshold" href="imblearn.under_sampling.InstanceHardnessThreshold.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -154,7 +144,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">imbalanced-learn</a>
@@ -162,9 +152,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -212,88 +203,113 @@
 <h1><a class="reference internal" href="../api.html#module-imblearn.under_sampling" title="imblearn.under_sampling"><code class="xref py py-mod docutils literal notranslate"><span class="pre">imblearn.under_sampling</span></code></a>.NearMiss<a class="headerlink" href="#imblearn-under-sampling-nearmiss" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="imblearn.under_sampling.NearMiss">
-<em class="property">class </em><code class="descclassname">imblearn.under_sampling.</code><code class="descname">NearMiss</code><span class="sig-paren">(</span><em>ratio='auto'</em>, <em>return_indices=False</em>, <em>random_state=None</em>, <em>version=1</em>, <em>n_neighbors=3</em>, <em>n_neighbors_ver3=3</em>, <em>n_jobs=1</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/2e5956a/imblearn/under_sampling/prototype_selection/nearmiss.py#L21"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/imblearn/under_sampling/prototype_selection/nearmiss.html#NearMiss"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.under_sampling.NearMiss" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">imblearn.under_sampling.</code><code class="descname">NearMiss</code><span class="sig-paren">(</span><em>sampling_strategy='auto'</em>, <em>return_indices=False</em>, <em>random_state=None</em>, <em>version=1</em>, <em>n_neighbors=3</em>, <em>n_neighbors_ver3=3</em>, <em>n_jobs=1</em>, <em>ratio=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/71ff0f6/imblearn/under_sampling/prototype_selection/nearmiss.py#L26"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/imblearn/under_sampling/prototype_selection/nearmiss.html#NearMiss"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.under_sampling.NearMiss" title="Permalink to this definition">¶</a></dt>
 <dd><p>Class to perform under-sampling based on NearMiss methods.</p>
 <p>Read more in the <a class="reference internal" href="../under_sampling.html#controlled-under-sampling"><span class="std std-ref">User Guide</span></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ratio</strong> : str, dict, or callable, optional (default=’auto’)</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>sampling_strategy</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, str, dict, callable, (default=’auto’)</span></dt>
+<dd><p class="first">Sampling information to sample the data set.</p>
+<ul class="last">
+<li><p class="first">When <code class="docutils literal notranslate"><span class="pre">float</span></code>, it corresponds to the ratio <span class="math">\alpha_{us}</span>
+defined by <span class="math">N_{rM} = \alpha_{us} \times N_{m}</span> where
+<span class="math">N_{rM}</span> and <span class="math">N_{m}</span> are the number of samples in the
+majority class after resampling and the number of samples in the
+minority class, respectively.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">float</span></code> is only available for <strong>binary</strong> classification. An
+error is raised for multi-class classification.</p>
+</div>
+</li>
+<li><p class="first">When <code class="docutils literal notranslate"><span class="pre">str</span></code>, specify the class targeted by the resampling. The
+number of samples in the different classes will be equalized.
+Possible choices are:</p>
 <blockquote>
-<div><p>Ratio to use for resampling the data set.</p>
-<ul class="simple">
-<li>If <code class="docutils literal notranslate"><span class="pre">str</span></code>, has to be one of: (i) <code class="docutils literal notranslate"><span class="pre">'minority'</span></code>: resample the
-minority class; (ii) <code class="docutils literal notranslate"><span class="pre">'majority'</span></code>: resample the majority class,
-(iii) <code class="docutils literal notranslate"><span class="pre">'not</span> <span class="pre">minority'</span></code>: resample all classes apart of the minority
-class, (iv) <code class="docutils literal notranslate"><span class="pre">'all'</span></code>: resample all classes, and (v) <code class="docutils literal notranslate"><span class="pre">'auto'</span></code>:
-correspond to <code class="docutils literal notranslate"><span class="pre">'all'</span></code> with for over-sampling methods and <code class="docutils literal notranslate"><span class="pre">'not</span>
-<span class="pre">minority'</span></code> for under-sampling methods. The classes targeted will be
-over-sampled or under-sampled to achieve an equal number of sample
-with the majority or minority class.</li>
-<li>If <code class="docutils literal notranslate"><span class="pre">dict</span></code>, the keys correspond to the targeted classes. The values
-correspond to the desired number of samples.</li>
-<li>If callable, function taking <code class="docutils literal notranslate"><span class="pre">y</span></code> and returns a <code class="docutils literal notranslate"><span class="pre">dict</span></code>. The keys
+<div><p><code class="docutils literal notranslate"><span class="pre">'majority'</span></code>: resample only the majority class;</p>
+<p><code class="docutils literal notranslate"><span class="pre">'not</span> <span class="pre">minority'</span></code>: resample all classes but the minority class;</p>
+<p><code class="docutils literal notranslate"><span class="pre">'not</span> <span class="pre">majority'</span></code>: resample all classes but the majority class;</p>
+<p><code class="docutils literal notranslate"><span class="pre">'all'</span></code>: resample all classes;</p>
+<p><code class="docutils literal notranslate"><span class="pre">'auto'</span></code>: equivalent to <code class="docutils literal notranslate"><span class="pre">'not</span> <span class="pre">minority'</span></code>.</p>
+</div></blockquote>
+</li>
+<li><p class="first">When <code class="docutils literal notranslate"><span class="pre">dict</span></code>, the keys correspond to the targeted classes. The
+values correspond to the desired number of samples for each targeted
+class.</p>
+</li>
+<li><p class="first">When callable, function taking <code class="docutils literal notranslate"><span class="pre">y</span></code> and returns a <code class="docutils literal notranslate"><span class="pre">dict</span></code>. The keys
 correspond to the targeted classes. The values correspond to the
-desired number of samples.</li>
+desired number of samples for each class.</p>
+</li>
 </ul>
-</div></blockquote>
-<p><strong>return_indices</strong> : bool, optional (default=False)</p>
-<blockquote>
-<div><p>Whether or not to return the indices of the samples randomly
+</dd>
+<dt><strong>return_indices</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool, optional (default=False)</span></dt>
+<dd><p class="first last">Whether or not to return the indices of the samples randomly
 selected from the majority class.</p>
-</div></blockquote>
-<p><strong>random_state</strong> : int, RandomState instance or None, optional (default=None)</p>
+</dd>
+<dt><strong>random_state</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, RandomState instance or None, optional (default=None)</span></dt>
+<dd><p class="first">Control the randomization of the algorithm
+- If int, <code class="docutils literal notranslate"><span class="pre">random_state</span></code> is the seed used by the random number</p>
 <blockquote>
-<div><p>If int, <code class="docutils literal notranslate"><span class="pre">random_state</span></code> is the seed used by the random number
-generator; If <code class="docutils literal notranslate"><span class="pre">RandomState</span></code> instance, random_state is the random
-number generator; If <code class="docutils literal notranslate"><span class="pre">None</span></code>, the random number generator is the
-<code class="docutils literal notranslate"><span class="pre">RandomState</span></code> instance used by <code class="docutils literal notranslate"><span class="pre">np.random</span></code>.</p>
-<div class="deprecated">
+<div><p>generator;</p>
+</div></blockquote>
+<ul class="simple">
+<li>If <code class="docutils literal notranslate"><span class="pre">RandomState</span></code> instance, random_state is the random number
+generator;</li>
+<li>If <code class="docutils literal notranslate"><span class="pre">None</span></code>, the random number generator is the <code class="docutils literal notranslate"><span class="pre">RandomState</span></code>
+instance used by <code class="docutils literal notranslate"><span class="pre">np.random</span></code>.</li>
+</ul>
+<div class="last deprecated">
 <p><span class="versionmodified">Deprecated since version 0.4: </span><code class="docutils literal notranslate"><span class="pre">random_state</span></code> is deprecated in 0.4 and will be removed in 0.6.</p>
 </div>
-</div></blockquote>
-<p><strong>version</strong> : int, optional (default=1)</p>
-<blockquote>
-<div><p>Version of the NearMiss to use. Possible values are 1, 2 or 3.</p>
-</div></blockquote>
-<p><strong>n_neighbors</strong> : int or object, optional (default=3)</p>
-<blockquote>
-<div><p>If <code class="docutils literal notranslate"><span class="pre">int</span></code>, size of the neighbourhood to consider to compute the
+</dd>
+<dt><strong>version</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, optional (default=1)</span></dt>
+<dd><p class="first last">Version of the NearMiss to use. Possible values are 1, 2 or 3.</p>
+</dd>
+<dt><strong>n_neighbors</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int or object, optional (default=3)</span></dt>
+<dd><p class="first last">If <code class="docutils literal notranslate"><span class="pre">int</span></code>, size of the neighbourhood to consider to compute the
 average distance to the minority point samples.  If object, an
 estimator that inherits from
 <code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.neighbors.base.KNeighborsMixin</span></code> that will be used to
 find the k_neighbors.</p>
-</div></blockquote>
-<p><strong>n_neighbors_ver3</strong> : int or object, optional (default=3)</p>
-<blockquote>
-<div><p>If <code class="docutils literal notranslate"><span class="pre">int</span></code>, NearMiss-3 algorithm start by a phase of re-sampling. This
+</dd>
+<dt><strong>n_neighbors_ver3</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int or object, optional (default=3)</span></dt>
+<dd><p class="first last">If <code class="docutils literal notranslate"><span class="pre">int</span></code>, NearMiss-3 algorithm start by a phase of re-sampling. This
 parameter correspond to the number of neighbours selected create the
 subset in which the selection will be performed.  If object, an
 estimator that inherits from
 <code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.neighbors.base.KNeighborsMixin</span></code> that will be used to
 find the k_neighbors.</p>
-</div></blockquote>
-<p><strong>n_jobs</strong> : int, optional (default=1)</p>
-<blockquote class="last">
-<div><p>The number of threads to open if possible.</p>
-</div></blockquote>
+</dd>
+<dt><strong>n_jobs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, optional (default=1)</span></dt>
+<dd><p class="first last">The number of threads to open if possible.</p>
+</dd>
+<dt><strong>ratio</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str, dict, or callable</span></dt>
+<dd><div class="first last deprecated">
+<p><span class="versionmodified">Deprecated since version 0.4: </span>Use the parameter <code class="docutils literal notranslate"><span class="pre">sampling_strategy</span></code> instead. It will be removed
+in 0.6.</p>
+</div>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>The methods are based on <a class="reference internal" href="#r50" id="id1">[R50]</a>.</p>
+<p>The methods are based on <a class="reference internal" href="#r7968144cb262-1" id="id1">[1]</a>.</p>
 <p>Supports mutli-class resampling.</p>
 <p>See
 <a class="reference internal" href="../auto_examples/applications/plot_multi_class_under_sampling.html#sphx-glr-auto-examples-applications-plot-multi-class-under-sampling-py"><span class="std std-ref">Multiclass classification with under-sampling</span></a>
 and
 <a class="reference internal" href="../auto_examples/under-sampling/plot_nearmiss.html#sphx-glr-auto-examples-under-sampling-plot-nearmiss-py"><span class="std std-ref">Nearmiss 1 &amp; 2 &amp; 3</span></a>.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r50" rules="none">
+<table class="docutils citation" frame="void" id="r7968144cb262-1" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[R50]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>)</em> I. Mani, I. Zhang. “kNN approach to unbalanced data distributions:
+<tr><td class="label">[1]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>)</em> I. Mani, I. Zhang. “kNN approach to unbalanced data distributions:
 a case study involving information extraction,” In Proceedings of
 workshop on learning from imbalanced datasets, 2003.</td></tr>
 </tbody>
@@ -305,42 +321,43 @@ workshop on learning from imbalanced datasets, 2003.</td></tr>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">make_classification</span><span class="p">(</span><span class="n">n_classes</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">class_sep</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
 <span class="gp">... </span><span class="n">weights</span><span class="o">=</span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">],</span> <span class="n">n_informative</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">n_redundant</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">flip_y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
 <span class="gp">... </span><span class="n">n_features</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">n_clusters_per_class</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_samples</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Original dataset shape </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Counter</span><span class="p">(</span><span class="n">y</span><span class="p">)))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Original dataset shape </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">Counter</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
 <span class="go">Original dataset shape Counter({1: 900, 0: 100})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">nm</span> <span class="o">=</span> <span class="n">NearMiss</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">X_res</span><span class="p">,</span> <span class="n">y_res</span> <span class="o">=</span> <span class="n">nm</span><span class="o">.</span><span class="n">fit_sample</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Resampled dataset shape </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Counter</span><span class="p">(</span><span class="n">y_res</span><span class="p">)))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Resampled dataset shape </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">Counter</span><span class="p">(</span><span class="n">y_res</span><span class="p">))</span>
 <span class="go">Resampled dataset shape Counter({0: 100, 1: 100})</span>
 </pre></div>
 </div>
 <dl class="method">
 <dt id="imblearn.under_sampling.NearMiss.__init__">
-<code class="descname">__init__</code><span class="sig-paren">(</span><em>ratio='auto'</em>, <em>return_indices=False</em>, <em>random_state=None</em>, <em>version=1</em>, <em>n_neighbors=3</em>, <em>n_neighbors_ver3=3</em>, <em>n_jobs=1</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/2e5956a/imblearn/under_sampling/prototype_selection/nearmiss.py#L115"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/imblearn/under_sampling/prototype_selection/nearmiss.html#NearMiss.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.under_sampling.NearMiss.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>sampling_strategy='auto'</em>, <em>return_indices=False</em>, <em>random_state=None</em>, <em>version=1</em>, <em>n_neighbors=3</em>, <em>n_neighbors_ver3=3</em>, <em>n_jobs=1</em>, <em>ratio=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/71ff0f6/imblearn/under_sampling/prototype_selection/nearmiss.py#L106"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/imblearn/under_sampling/prototype_selection/nearmiss.html#NearMiss.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.under_sampling.NearMiss.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="imblearn.under_sampling.NearMiss.fit">
-<code class="descname">fit</code><span class="sig-paren">(</span><em>X</em>, <em>y</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/2e5956a/imblearn/base.py#L150"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.under_sampling.NearMiss.fit" title="Permalink to this definition">¶</a></dt>
+<code class="descname">fit</code><span class="sig-paren">(</span><em>X</em>, <em>y</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/71ff0f6/imblearn/base.py#L168"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.under_sampling.NearMiss.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find the classes statistics before to perform sampling.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>X</strong> : {array-like, sparse matrix}, shape (n_samples, n_features)</p>
-<blockquote>
-<div><p>Matrix containing the data which have to be sampled.</p>
-</div></blockquote>
-<p><strong>y</strong> : array-like, shape (n_samples,)</p>
-<blockquote>
-<div><p>Corresponding label for each sample in X.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>X</strong> <span class="classifier-delimiter">:</span> <span class="classifier">{array-like, sparse matrix}, shape (n_samples, n_features)</span></dt>
+<dd><p class="first last">Matrix containing the data which have to be sampled.</p>
+</dd>
+<dt><strong>y</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array-like, shape (n_samples,)</span></dt>
+<dd><p class="first last">Corresponding label for each sample in X.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>self</strong> : object,</p>
-<blockquote class="last">
-<div><p>Return self.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>self</strong> <span class="classifier-delimiter">:</span> <span class="classifier">object,</span></dt>
+<dd><p class="first last">Return self.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -349,30 +366,30 @@ workshop on learning from imbalanced datasets, 2003.</td></tr>
 
 <dl class="method">
 <dt id="imblearn.under_sampling.NearMiss.fit_sample">
-<code class="descname">fit_sample</code><span class="sig-paren">(</span><em>X</em>, <em>y</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/2e5956a/imblearn/base.py#L78"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.under_sampling.NearMiss.fit_sample" title="Permalink to this definition">¶</a></dt>
+<code class="descname">fit_sample</code><span class="sig-paren">(</span><em>X</em>, <em>y</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/71ff0f6/imblearn/base.py#L80"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.under_sampling.NearMiss.fit_sample" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit the statistics and resample the data directly.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>X</strong> : {array-like, sparse matrix}, shape (n_samples, n_features)</p>
-<blockquote>
-<div><p>Matrix containing the data which have to be sampled.</p>
-</div></blockquote>
-<p><strong>y</strong> : array-like, shape (n_samples,)</p>
-<blockquote>
-<div><p>Corresponding label for each sample in X.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>X</strong> <span class="classifier-delimiter">:</span> <span class="classifier">{array-like, sparse matrix}, shape (n_samples, n_features)</span></dt>
+<dd><p class="first last">Matrix containing the data which have to be sampled.</p>
+</dd>
+<dt><strong>y</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array-like, shape (n_samples,)</span></dt>
+<dd><p class="first last">Corresponding label for each sample in X.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>X_resampled</strong> : {array-like, sparse matrix}, shape (n_samples_new, n_features)</p>
-<blockquote>
-<div><p>The array containing the resampled data.</p>
-</div></blockquote>
-<p><strong>y_resampled</strong> : array-like, shape (n_samples_new,)</p>
-<blockquote class="last">
-<div><p>The corresponding label of <cite>X_resampled</cite></p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>X_resampled</strong> <span class="classifier-delimiter">:</span> <span class="classifier">{array-like, sparse matrix}, shape (n_samples_new, n_features)</span></dt>
+<dd><p class="first last">The array containing the resampled data.</p>
+</dd>
+<dt><strong>y_resampled</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array-like, shape (n_samples_new,)</span></dt>
+<dd><p class="first last">The corresponding label of <cite>X_resampled</cite></p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -381,23 +398,25 @@ workshop on learning from imbalanced datasets, 2003.</td></tr>
 
 <dl class="method">
 <dt id="imblearn.under_sampling.NearMiss.get_params">
-<code class="descname">get_params</code><span class="sig-paren">(</span><em>deep=True</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/2e5956a/imblearn/../../miniconda/envs/testenv/lib/python3.6/site-packages/sklearn/base.py#L213"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.under_sampling.NearMiss.get_params" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_params</code><span class="sig-paren">(</span><em>deep=True</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/71ff0f6/imblearn/../../miniconda/envs/testenv/lib/python3.6/site-packages/sklearn/base.py#L213"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.under_sampling.NearMiss.get_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get parameters for this estimator.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>deep</strong> : boolean, optional</p>
-<blockquote>
-<div><p>If True, will return the parameters for this estimator and
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>deep</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean, optional</span></dt>
+<dd><p class="first last">If True, will return the parameters for this estimator and
 contained subobjects that are estimators.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>params</strong> : mapping of string to any</p>
-<blockquote class="last">
-<div><p>Parameter names mapped to their values.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>params</strong> <span class="classifier-delimiter">:</span> <span class="classifier">mapping of string to any</span></dt>
+<dd><p class="first last">Parameter names mapped to their values.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -406,30 +425,30 @@ contained subobjects that are estimators.</p>
 
 <dl class="method">
 <dt id="imblearn.under_sampling.NearMiss.sample">
-<code class="descname">sample</code><span class="sig-paren">(</span><em>X</em>, <em>y</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/2e5956a/imblearn/base.py#L39"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.under_sampling.NearMiss.sample" title="Permalink to this definition">¶</a></dt>
+<code class="descname">sample</code><span class="sig-paren">(</span><em>X</em>, <em>y</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/71ff0f6/imblearn/base.py#L41"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.under_sampling.NearMiss.sample" title="Permalink to this definition">¶</a></dt>
 <dd><p>Resample the dataset.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>X</strong> : {array-like, sparse matrix}, shape (n_samples, n_features)</p>
-<blockquote>
-<div><p>Matrix containing the data which have to be sampled.</p>
-</div></blockquote>
-<p><strong>y</strong> : array-like, shape (n_samples,)</p>
-<blockquote>
-<div><p>Corresponding label for each sample in X.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>X</strong> <span class="classifier-delimiter">:</span> <span class="classifier">{array-like, sparse matrix}, shape (n_samples, n_features)</span></dt>
+<dd><p class="first last">Matrix containing the data which have to be sampled.</p>
+</dd>
+<dt><strong>y</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array-like, shape (n_samples,)</span></dt>
+<dd><p class="first last">Corresponding label for each sample in X.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>X_resampled</strong> : {ndarray, sparse matrix}, shape (n_samples_new, n_features)</p>
-<blockquote>
-<div><p>The array containing the resampled data.</p>
-</div></blockquote>
-<p><strong>y_resampled</strong> : ndarray, shape (n_samples_new)</p>
-<blockquote class="last">
-<div><p>The corresponding label of <cite>X_resampled</cite></p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>X_resampled</strong> <span class="classifier-delimiter">:</span> <span class="classifier">{ndarray, sparse matrix}, shape (n_samples_new, n_features)</span></dt>
+<dd><p class="first last">The array containing the resampled data.</p>
+</dd>
+<dt><strong>y_resampled</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ndarray, shape (n_samples_new)</span></dt>
+<dd><p class="first last">The corresponding label of <cite>X_resampled</cite></p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -438,7 +457,7 @@ contained subobjects that are estimators.</p>
 
 <dl class="method">
 <dt id="imblearn.under_sampling.NearMiss.set_params">
-<code class="descname">set_params</code><span class="sig-paren">(</span><em>**params</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/2e5956a/imblearn/../../miniconda/envs/testenv/lib/python3.6/site-packages/sklearn/base.py#L250"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.under_sampling.NearMiss.set_params" title="Permalink to this definition">¶</a></dt>
+<code class="descname">set_params</code><span class="sig-paren">(</span><em>**params</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/71ff0f6/imblearn/../../miniconda/envs/testenv/lib/python3.6/site-packages/sklearn/base.py#L250"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.under_sampling.NearMiss.set_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the parameters of this estimator.</p>
 <p>The method works on simple estimators as well as on nested objects
 (such as pipelines). The latter have parameters of the form
@@ -448,7 +467,11 @@ component of a nested object.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">self</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>self</strong></dt>
+<dd></dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -475,9 +498,7 @@ component of a nested object.</p>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -499,7 +520,7 @@ component of a nested object.</p>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -518,6 +539,7 @@ component of a nested object.</p>
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
             VERSION:'0.4.0.dev0',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -536,14 +558,13 @@ component of a nested object.</p>
     <script type="text/javascript" src="../_static/js/theme.js"></script>
   
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

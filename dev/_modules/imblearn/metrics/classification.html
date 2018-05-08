@@ -25,29 +25,19 @@
   
 
   
-  
     <link rel="stylesheet" href="../../../_static/css/imbalanced-learn.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../../../_static/gallery.css" type="text/css" />
-  
-
-  
-        <link rel="author" title="About these documents"
-              href="../../../about.html"/>
-        <link rel="index" title="Index"
-              href="../../../genindex.html"/>
-        <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="imbalanced-learn 0.4.0.dev0 documentation" href="../../../index.html"/>
-        <link rel="up" title="Module code" href="../../index.html"/> 
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/gallery.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
 
   
   <script src="../../../_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -125,7 +115,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../../index.html">imbalanced-learn</a>
@@ -133,9 +123,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -164,8 +155,6 @@
     
     
       <li class="wy-breadcrumbs-aside">
-        
-            
         
       </li>
     
@@ -212,7 +201,6 @@
     <span class="kn">from</span> <span class="nn">inspect</span> <span class="k">import</span> <span class="n">signature</span>
 <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
     <span class="kn">from</span> <span class="nn">sklearn.externals.funcsigs</span> <span class="k">import</span> <span class="n">signature</span>
-
 
 <span class="n">LOGGER</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
@@ -346,10 +334,11 @@
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Target is </span><span class="si">%s</span><span class="s2"> but average=&#39;binary&#39;. Please &quot;</span>
                              <span class="s2">&quot;choose another average setting.&quot;</span> <span class="o">%</span> <span class="n">y_type</span><span class="p">)</span>
     <span class="k">elif</span> <span class="n">pos_label</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
-        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Note that pos_label (set to </span><span class="si">%r</span><span class="s2">) is ignored when &quot;</span>
-                      <span class="s2">&quot;average != &#39;binary&#39; (got </span><span class="si">%r</span><span class="s2">). You may use &quot;</span>
-                      <span class="s2">&quot;labels=[pos_label] to specify a single positive class.&quot;</span>
-                      <span class="o">%</span> <span class="p">(</span><span class="n">pos_label</span><span class="p">,</span> <span class="n">average</span><span class="p">),</span> <span class="ne">UserWarning</span><span class="p">)</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+            <span class="s2">&quot;Note that pos_label (set to </span><span class="si">%r</span><span class="s2">) is ignored when &quot;</span>
+            <span class="s2">&quot;average != &#39;binary&#39; (got </span><span class="si">%r</span><span class="s2">). You may use &quot;</span>
+            <span class="s2">&quot;labels=[pos_label] to specify a single positive class.&quot;</span> <span class="o">%</span>
+            <span class="p">(</span><span class="n">pos_label</span><span class="p">,</span> <span class="n">average</span><span class="p">),</span> <span class="ne">UserWarning</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">labels</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">labels</span> <span class="o">=</span> <span class="n">present_labels</span>
@@ -357,8 +346,8 @@
     <span class="k">else</span><span class="p">:</span>
         <span class="n">n_labels</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span>
         <span class="n">labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">(</span>
-            <span class="p">[</span><span class="n">labels</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">setdiff1d</span><span class="p">(</span>
-                <span class="n">present_labels</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">assume_unique</span><span class="o">=</span><span class="kc">True</span><span class="p">)])</span>
+            <span class="p">[</span><span class="n">labels</span><span class="p">,</span>
+             <span class="n">np</span><span class="o">.</span><span class="n">setdiff1d</span><span class="p">(</span><span class="n">present_labels</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">assume_unique</span><span class="o">=</span><span class="kc">True</span><span class="p">)])</span>
 
     <span class="c1"># Calculate tp_sum, pred_sum, true_sum ###</span>
 
@@ -771,8 +760,8 @@
             <span class="n">warn_for</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;specificity&#39;</span><span class="p">,</span> <span class="s1">&#39;specificity&#39;</span><span class="p">),</span>
             <span class="n">sample_weight</span><span class="o">=</span><span class="n">sample_weight</span><span class="p">)</span>
 
-        <span class="n">LOGGER</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;The sensitivity and specificity are : </span><span class="si">%s</span><span class="s1"> - </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span>
-                     <span class="p">(</span><span class="n">sen</span><span class="p">,</span> <span class="n">spe</span><span class="p">))</span>
+        <span class="n">LOGGER</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;The sensitivity and specificity are : </span><span class="si">%s</span><span class="s1"> - </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">sen</span><span class="p">,</span>
+                                                                        <span class="n">spe</span><span class="p">))</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">sen</span> <span class="o">*</span> <span class="n">spe</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">present_labels</span> <span class="o">=</span> <span class="n">unique_labels</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
@@ -782,8 +771,10 @@
             <span class="n">n_labels</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">n_labels</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span>
-            <span class="n">labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">labels</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">setdiff1d</span><span class="p">(</span><span class="n">present_labels</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span>
-                                                     <span class="n">assume_unique</span><span class="o">=</span><span class="kc">True</span><span class="p">)])</span>
+            <span class="n">labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span>
+                <span class="n">labels</span><span class="p">,</span>
+                <span class="n">np</span><span class="o">.</span><span class="n">setdiff1d</span><span class="p">(</span><span class="n">present_labels</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">assume_unique</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="p">])</span>
 
         <span class="n">le</span> <span class="o">=</span> <span class="n">LabelEncoder</span><span class="p">()</span>
         <span class="n">le</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span>
@@ -801,14 +792,14 @@
             <span class="n">tp_bins_weights</span> <span class="o">=</span> <span class="kc">None</span>
 
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">tp_bins</span><span class="p">):</span>
-            <span class="n">tp_sum</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">bincount</span><span class="p">(</span><span class="n">tp_bins</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">tp_bins_weights</span><span class="p">,</span>
-                                 <span class="n">minlength</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">))</span>
+            <span class="n">tp_sum</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">bincount</span><span class="p">(</span>
+                <span class="n">tp_bins</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">tp_bins_weights</span><span class="p">,</span> <span class="n">minlength</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">))</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="c1"># Pathological case</span>
             <span class="n">true_sum</span> <span class="o">=</span> <span class="n">tp_sum</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">))</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_true</span><span class="p">):</span>
-            <span class="n">true_sum</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">bincount</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">sample_weight</span><span class="p">,</span>
-                                   <span class="n">minlength</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">))</span>
+            <span class="n">true_sum</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">bincount</span><span class="p">(</span>
+                <span class="n">y_true</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">sample_weight</span><span class="p">,</span> <span class="n">minlength</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">))</span>
 
         <span class="c1"># Retain only selected labels</span>
         <span class="n">indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">searchsorted</span><span class="p">(</span><span class="n">sorted_labels</span><span class="p">,</span> <span class="n">labels</span><span class="p">[:</span><span class="n">n_labels</span><span class="p">])</span>
@@ -902,8 +893,7 @@
             <span class="c1"># specificity and specificity</span>
             <span class="n">params_sens_spec</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">sens_spec_sig</span><span class="o">.</span><span class="n">_parameters</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
             <span class="c1"># Make the intersection between the parameters</span>
-            <span class="n">sel_params</span> <span class="o">=</span> <span class="n">params_sens_spec</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span>
-                <span class="nb">set</span><span class="p">(</span><span class="n">tags_scoring_func</span><span class="p">))</span>
+            <span class="n">sel_params</span> <span class="o">=</span> <span class="n">params_sens_spec</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">tags_scoring_func</span><span class="p">))</span>
             <span class="c1"># Create a sub dictionary</span>
             <span class="n">tags_scoring_func</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">((</span><span class="n">k</span><span class="p">,</span> <span class="n">tags_scoring_func</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
                                      <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">sel_params</span><span class="p">)</span>
@@ -918,12 +908,10 @@
                   <span class="n">scoring_func</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;jaccard_similarity_score&#39;</span><span class="p">):</span>
                 <span class="n">tags_scoring_func</span><span class="p">[</span><span class="s1">&#39;average&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;binary&#39;</span>
             <span class="c1"># Create the list of parameters through signature binding</span>
-            <span class="n">tags_sens_spec</span> <span class="o">=</span> <span class="n">sens_spec_sig</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span>
-                <span class="o">**</span><span class="n">tags_scoring_func</span><span class="p">)</span>
+            <span class="n">tags_sens_spec</span> <span class="o">=</span> <span class="n">sens_spec_sig</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="o">**</span><span class="n">tags_scoring_func</span><span class="p">)</span>
             <span class="c1"># Call the sens/spec function</span>
             <span class="n">sen</span><span class="p">,</span> <span class="n">spe</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">sensitivity_specificity_support</span><span class="p">(</span>
-                <span class="o">*</span><span class="n">tags_sens_spec</span><span class="o">.</span><span class="n">args</span><span class="p">,</span>
-                <span class="o">**</span><span class="n">tags_sens_spec</span><span class="o">.</span><span class="n">kwargs</span><span class="p">)</span>
+                <span class="o">*</span><span class="n">tags_sens_spec</span><span class="o">.</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">tags_sens_spec</span><span class="o">.</span><span class="n">kwargs</span><span class="p">)</span>
             <span class="c1"># Compute the dominance</span>
             <span class="n">dom</span> <span class="o">=</span> <span class="n">sen</span> <span class="o">-</span> <span class="n">spe</span>
             <span class="k">return</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">+</span> <span class="n">alpha</span> <span class="o">*</span> <span class="n">dom</span><span class="p">)</span> <span class="o">*</span> <span class="n">_score</span>
@@ -1074,13 +1062,11 @@
 
     <span class="c1"># compute averages</span>
     <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="n">last_line_heading</span><span class="p">]</span>
-    <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span>
-            <span class="n">precision</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">support</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span>
-                <span class="n">recall</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">support</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span>
-                    <span class="n">specificity</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">support</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span>
-                        <span class="n">f1</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">support</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span>
-                            <span class="n">geo_mean</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">support</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span>
-                                <span class="n">iba</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">support</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">precision</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">support</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span>
+            <span class="n">recall</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">support</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">specificity</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">support</span><span class="p">),</span>
+              <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">support</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span>
+                  <span class="n">geo_mean</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">support</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">iba</span><span class="p">,</span>
+                                                         <span class="n">weights</span><span class="o">=</span><span class="n">support</span><span class="p">)):</span>
         <span class="n">values</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">&quot;{0:0.</span><span class="si">{1}</span><span class="s2">f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">digits</span><span class="p">)]</span>
     <span class="n">values</span> <span class="o">+=</span> <span class="p">[</span><span class="s1">&#39;</span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">support</span><span class="p">))]</span>
     <span class="n">report</span> <span class="o">+=</span> <span class="n">fmt</span> <span class="o">%</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
@@ -1088,9 +1074,7 @@
 </pre></div>
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -1103,7 +1087,7 @@
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -1122,6 +1106,7 @@
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
             VERSION:'0.4.0.dev0',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -1140,14 +1125,13 @@
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
   
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

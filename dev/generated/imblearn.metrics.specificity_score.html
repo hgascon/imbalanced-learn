@@ -25,31 +25,21 @@
   
 
   
-  
     <link rel="stylesheet" href="../_static/css/imbalanced-learn.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
-  
-
-  
-        <link rel="author" title="About these documents"
-              href="../about.html"/>
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="imbalanced-learn 0.4.0.dev0 documentation" href="../index.html"/>
-        <link rel="up" title="imbalanced-learn API" href="../api.html"/>
-        <link rel="next" title="imblearn.metrics.geometric_mean_score" href="imblearn.metrics.geometric_mean_score.html"/>
-        <link rel="prev" title="imblearn.metrics.sensitivity_score" href="imblearn.metrics.sensitivity_score.html"/> 
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="imblearn.metrics.geometric_mean_score" href="imblearn.metrics.geometric_mean_score.html" />
+    <link rel="prev" title="imblearn.metrics.sensitivity_score" href="imblearn.metrics.sensitivity_score.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -146,7 +136,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">imbalanced-learn</a>
@@ -154,9 +144,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -204,7 +195,7 @@
 <h1><a class="reference internal" href="../api.html#module-imblearn.metrics" title="imblearn.metrics"><code class="xref py py-mod docutils literal notranslate"><span class="pre">imblearn.metrics</span></code></a>.specificity_score<a class="headerlink" href="#imblearn-metrics-specificity-score" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="imblearn.metrics.specificity_score">
-<code class="descclassname">imblearn.metrics.</code><code class="descname">specificity_score</code><span class="sig-paren">(</span><em>y_true</em>, <em>y_pred</em>, <em>labels=None</em>, <em>pos_label=1</em>, <em>average='binary'</em>, <em>sample_weight=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/2e5956a/imblearn/metrics/classification.py#L368"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/imblearn/metrics/classification.html#specificity_score"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.metrics.specificity_score" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">imblearn.metrics.</code><code class="descname">specificity_score</code><span class="sig-paren">(</span><em>y_true</em>, <em>y_pred</em>, <em>labels=None</em>, <em>pos_label=1</em>, <em>average='binary'</em>, <em>sample_weight=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/71ff0f6/imblearn/metrics/classification.py#L368"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/imblearn/metrics/classification.html#specificity_score"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.metrics.specificity_score" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the specificity</p>
 <p>The specificity is the ratio <code class="docutils literal notranslate"><span class="pre">tp</span> <span class="pre">/</span> <span class="pre">(tp</span> <span class="pre">+</span> <span class="pre">fn)</span></code> where <code class="docutils literal notranslate"><span class="pre">tp</span></code> is the number
 of true positives and <code class="docutils literal notranslate"><span class="pre">fn</span></code> the number of false negatives. The specificity
@@ -216,34 +207,30 @@ samples.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>y_true</strong> : ndarray, shape (n_samples, )</p>
-<blockquote>
-<div><p>Ground truth (correct) target values.</p>
-</div></blockquote>
-<p><strong>y_pred</strong> : ndarray, shape (n_samples, )</p>
-<blockquote>
-<div><p>Estimated targets as returned by a classifier.</p>
-</div></blockquote>
-<p><strong>labels</strong> : list, optional</p>
-<blockquote>
-<div><p>The set of labels to include when <code class="docutils literal notranslate"><span class="pre">average</span> <span class="pre">!=</span> <span class="pre">'binary'</span></code>, and their
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>y_true</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ndarray, shape (n_samples, )</span></dt>
+<dd><p class="first last">Ground truth (correct) target values.</p>
+</dd>
+<dt><strong>y_pred</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ndarray, shape (n_samples, )</span></dt>
+<dd><p class="first last">Estimated targets as returned by a classifier.</p>
+</dd>
+<dt><strong>labels</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list, optional</span></dt>
+<dd><p class="first last">The set of labels to include when <code class="docutils literal notranslate"><span class="pre">average</span> <span class="pre">!=</span> <span class="pre">'binary'</span></code>, and their
 order if <code class="docutils literal notranslate"><span class="pre">average</span> <span class="pre">is</span> <span class="pre">None</span></code>. Labels present in the data can be
 excluded, for example to calculate a multiclass average ignoring a
 majority negative class, while labels not present in the data will
 result in 0 components in a macro average.</p>
-</div></blockquote>
-<p><strong>pos_label</strong> : str or int, optional (default=1)</p>
-<blockquote>
-<div><p>The class to report if <code class="docutils literal notranslate"><span class="pre">average='binary'</span></code> and the data is binary.
+</dd>
+<dt><strong>pos_label</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or int, optional (default=1)</span></dt>
+<dd><p class="first last">The class to report if <code class="docutils literal notranslate"><span class="pre">average='binary'</span></code> and the data is binary.
 If the data are multiclass, this will be ignored;
 setting <code class="docutils literal notranslate"><span class="pre">labels=[pos_label]</span></code> and <code class="docutils literal notranslate"><span class="pre">average</span> <span class="pre">!=</span> <span class="pre">'binary'</span></code> will report
 scores for that label only.</p>
-</div></blockquote>
-<p><strong>average</strong> : str or None, optional (default=None)</p>
-<blockquote>
-<div><p>If <code class="docutils literal notranslate"><span class="pre">None</span></code>, the scores for each class are returned. Otherwise, this
+</dd>
+<dt><strong>average</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or None, optional (default=None)</span></dt>
+<dd><p class="first">If <code class="docutils literal notranslate"><span class="pre">None</span></code>, the scores for each class are returned. Otherwise, this
 determines the type of averaging performed on the data:</p>
-<dl class="docutils">
+<dl class="last docutils">
 <dt><code class="docutils literal notranslate"><span class="pre">'binary'</span></code>:</dt>
 <dd><p class="first last">Only report results for the class specified by <code class="docutils literal notranslate"><span class="pre">pos_label</span></code>.
 This is applicable only if targets (<code class="docutils literal notranslate"><span class="pre">y_{true,pred}</span></code>) are binary.</p>
@@ -268,19 +255,21 @@ meaningful for multilabel classification where this differs from
 <code class="xref py py-func docutils literal notranslate"><span class="pre">accuracy_score</span></code>).</p>
 </dd>
 </dl>
-</div></blockquote>
-<p><strong>warn_for</strong> : tuple or set, for internal use</p>
-<blockquote>
-<div><p>This determines which warnings will be made in the case that this
+</dd>
+<dt><strong>warn_for</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple or set, for internal use</span></dt>
+<dd><p class="first last">This determines which warnings will be made in the case that this
 function is being used to return only one of its metrics.</p>
-</div></blockquote>
-<p><strong>sample_weight</strong> : ndarray, shape (n_samples, )</p>
-<blockquote>
-<div><p>Sample weights.</p>
-</div></blockquote>
+</dd>
+<dt><strong>sample_weight</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ndarray, shape (n_samples, )</span></dt>
+<dd><p class="first last">Sample weights.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>specificity</strong> : float (if <code class="docutils literal notranslate"><span class="pre">average</span></code> = None) or ndarray,         shape (n_unique_labels, )</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>specificity</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float (if <code class="docutils literal notranslate"><span class="pre">average</span></code> = None) or ndarray,         shape (n_unique_labels, )</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -306,9 +295,7 @@ function is being used to return only one of its metrics.</p>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -330,7 +317,7 @@ function is being used to return only one of its metrics.</p>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -349,6 +336,7 @@ function is being used to return only one of its metrics.</p>
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
             VERSION:'0.4.0.dev0',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -367,14 +355,13 @@ function is being used to return only one of its metrics.</p>
     <script type="text/javascript" src="../_static/js/theme.js"></script>
   
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

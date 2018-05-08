@@ -25,31 +25,21 @@
   
 
   
-  
     <link rel="stylesheet" href="_static/css/imbalanced-learn.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="_static/gallery.css" type="text/css" />
-  
-
-  
-        <link rel="author" title="About these documents"
-              href="about.html"/>
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="imbalanced-learn 0.4.0.dev0 documentation" href="index.html"/>
-        <link rel="up" title="User Guide" href="user_guide.html"/>
-        <link rel="next" title="4. Combination of over- and under-sampling" href="combine.html"/>
-        <link rel="prev" title="2. Over-sampling" href="over_sampling.html"/> 
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/gallery.css" type="text/css" />
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="4. Combination of over- and under-sampling" href="combine.html" />
+    <link rel="prev" title="2. Over-sampling" href="over_sampling.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -146,7 +136,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">imbalanced-learn</a>
@@ -154,9 +144,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -279,7 +270,7 @@ by considering independently each targeted class:</p>
 <span class="go">(181, 2)</span>
 </pre></div>
 </div>
-<p>See <a class="reference internal" href="auto_examples/plot_ratio_usage.html#sphx-glr-auto-examples-plot-ratio-usage-py"><span class="std std-ref">Usage of the ratio parameter for the different algorithm</span></a>,
+<p>See <span class="xref std std-ref">sphx_glr_auto_examples_plot_sampling_strategy_usage.py</span>.,
 <a class="reference internal" href="auto_examples/under-sampling/plot_comparison_under_sampling.html#sphx-glr-auto-examples-under-sampling-plot-comparison-under-sampling-py"><span class="std std-ref">Comparison of the different under-sampling algorithms</span></a>,
 and <a class="reference internal" href="auto_examples/under-sampling/plot_random_under_sampler.html#sphx-glr-auto-examples-under-sampling-plot-random-under-sampler-py"><span class="std std-ref">Random under-sampling</span></a>.</p>
 <p><a class="reference internal" href="generated/imblearn.under_sampling.NearMiss.html#imblearn.under_sampling.NearMiss" title="imblearn.under_sampling.NearMiss"><code class="xref py py-class docutils literal notranslate"><span class="pre">NearMiss</span></code></a> adds some heuristic rules to select
@@ -352,11 +343,11 @@ words, a Tomek’s link exist if the two samples are the nearest neighbors of
 each other. In the figure below, a Tomek’s link is illustrated by highlighting
 the samples of interest in green.</p>
 <a class="reference external image-reference" href="./auto_examples/under-sampling/plot_illustration_tomek_links.html"><img alt="_images/sphx_glr_plot_illustration_tomek_links_0011.png" class="align-center" src="_images/sphx_glr_plot_illustration_tomek_links_0011.png" style="width: 360.0px; height: 360.0px;" /></a>
-<p>The parameter <code class="docutils literal notranslate"><span class="pre">ratio</span></code> control which sample of the link will be removed. For
-instance, the default (i.e., <code class="docutils literal notranslate"><span class="pre">ratio='auto'</span></code>) will remove the sample from the
-majority class. Both samples from the majority and minority class can be
-removed by setting <code class="docutils literal notranslate"><span class="pre">ratio</span></code> to <code class="docutils literal notranslate"><span class="pre">'all'</span></code>. The figure illustrates this
-behaviour.</p>
+<p>The parameter <code class="docutils literal notranslate"><span class="pre">sampling_strategy</span></code> control which sample of the link will be
+removed. For instance, the default (i.e., <code class="docutils literal notranslate"><span class="pre">sampling_strategy='auto'</span></code>) will
+remove the sample from the majority class. Both samples from the majority and
+minority class can be removed by setting <code class="docutils literal notranslate"><span class="pre">sampling_strategy</span></code> to <code class="docutils literal notranslate"><span class="pre">'all'</span></code>. The
+figure illustrates this behaviour.</p>
 <a class="reference external image-reference" href="./auto_examples/under-sampling/plot_illustration_tomek_links.html"><img alt="_images/sphx_glr_plot_illustration_tomek_links_0021.png" class="align-center" src="_images/sphx_glr_plot_illustration_tomek_links_0021.png" style="width: 720.0px; height: 360.0px;" /></a>
 <p>See
 <a class="reference internal" href="auto_examples/under-sampling/plot_illustration_tomek_links.html#sphx-glr-auto-examples-under-sampling-plot-illustration-tomek-links-py"><span class="std std-ref">Illustration of the definition of a Tomek link</span></a>
@@ -505,9 +496,7 @@ is not always possible to get a specific number of samples.</p>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -529,7 +518,7 @@ is not always possible to get a specific number of samples.</p>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -548,6 +537,7 @@ is not always possible to get a specific number of samples.</p>
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
             VERSION:'0.4.0.dev0',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -566,14 +556,13 @@ is not always possible to get a specific number of samples.</p>
     <script type="text/javascript" src="_static/js/theme.js"></script>
   
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

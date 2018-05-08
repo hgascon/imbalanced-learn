@@ -25,31 +25,21 @@
   
 
   
-  
     <link rel="stylesheet" href="../_static/css/imbalanced-learn.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
-  
-
-  
-        <link rel="author" title="About these documents"
-              href="../about.html"/>
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="imbalanced-learn 0.4.0.dev0 documentation" href="../index.html"/>
-        <link rel="up" title="imbalanced-learn API" href="../api.html"/>
-        <link rel="next" title="imblearn.over_sampling.SMOTE" href="imblearn.over_sampling.SMOTE.html"/>
-        <link rel="prev" title="imblearn.over_sampling.ADASYN" href="imblearn.over_sampling.ADASYN.html"/> 
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="imblearn.over_sampling.SMOTE" href="imblearn.over_sampling.SMOTE.html" />
+    <link rel="prev" title="imblearn.over_sampling.ADASYN" href="imblearn.over_sampling.ADASYN.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -146,7 +136,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">imbalanced-learn</a>
@@ -154,9 +144,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -204,7 +195,7 @@
 <h1><a class="reference internal" href="../api.html#module-imblearn.over_sampling" title="imblearn.over_sampling"><code class="xref py py-mod docutils literal notranslate"><span class="pre">imblearn.over_sampling</span></code></a>.RandomOverSampler<a class="headerlink" href="#imblearn-over-sampling-randomoversampler" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="imblearn.over_sampling.RandomOverSampler">
-<em class="property">class </em><code class="descclassname">imblearn.over_sampling.</code><code class="descname">RandomOverSampler</code><span class="sig-paren">(</span><em>ratio='auto'</em>, <em>random_state=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/2e5956a/imblearn/over_sampling/random_over_sampler.py#L16"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/imblearn/over_sampling/random_over_sampler.html#RandomOverSampler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.over_sampling.RandomOverSampler" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">imblearn.over_sampling.</code><code class="descname">RandomOverSampler</code><span class="sig-paren">(</span><em>sampling_strategy='auto'</em>, <em>random_state=None</em>, <em>ratio=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/71ff0f6/imblearn/over_sampling/random_over_sampler.py#L21"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/imblearn/over_sampling/random_over_sampler.html#RandomOverSampler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.over_sampling.RandomOverSampler" title="Permalink to this definition">¶</a></dt>
 <dd><p>Class to perform random over-sampling.</p>
 <p>Object to over-sample the minority class(es) by picking samples at random
 with replacement.</p>
@@ -213,32 +204,64 @@ with replacement.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ratio</strong> : str, dict, or callable, optional (default=’auto’)</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>sampling_strategy</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, str, dict or callable, (default=’auto’)</span></dt>
+<dd><p class="first">Sampling information to resample the data set.</p>
+<ul class="last">
+<li><p class="first">When <code class="docutils literal notranslate"><span class="pre">float</span></code>, it corresponds to the ratio <span class="math">\alpha_{os}</span>
+defined by <span class="math">N_{rm} = \alpha_{os} \times N_{m}</span> where
+<span class="math">N_{rm}</span> and <span class="math">N_{M}</span> are the number of samples in the
+minority class after resampling and the number of samples in the
+majority class, respectively.</p>
 <blockquote>
-<div><p>Ratio to use for resampling the data set.</p>
-<ul class="simple">
-<li>If <code class="docutils literal notranslate"><span class="pre">str</span></code>, has to be one of: (i) <code class="docutils literal notranslate"><span class="pre">'minority'</span></code>: resample the
-minority class; (ii) <code class="docutils literal notranslate"><span class="pre">'majority'</span></code>: resample the majority class,
-(iii) <code class="docutils literal notranslate"><span class="pre">'not</span> <span class="pre">minority'</span></code>: resample all classes apart of the minority
-class, (iv) <code class="docutils literal notranslate"><span class="pre">'all'</span></code>: resample all classes, and (v) <code class="docutils literal notranslate"><span class="pre">'auto'</span></code>:
-correspond to <code class="docutils literal notranslate"><span class="pre">'all'</span></code> with for over-sampling methods and <code class="docutils literal notranslate"><span class="pre">'not</span>
-<span class="pre">minority'</span></code> for under-sampling methods. The classes targeted will be
-over-sampled or under-sampled to achieve an equal number of sample
-with the majority or minority class.</li>
-<li>If <code class="docutils literal notranslate"><span class="pre">dict</span></code>, the keys correspond to the targeted classes. The values
-correspond to the desired number of samples.</li>
-<li>If callable, function taking <code class="docutils literal notranslate"><span class="pre">y</span></code> and returns a <code class="docutils literal notranslate"><span class="pre">dict</span></code>. The keys
+<div><div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">float</span></code> is only available for <strong>binary</strong> classification. An
+error is raised for multi-class classification.</p>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">When <code class="docutils literal notranslate"><span class="pre">str</span></code>, specify the class targeted by the resampling. The
+number of samples in the different classes will be equalized.
+Possible choices are:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">'minority'</span></code>: resample only the minority class;</p>
+<p><code class="docutils literal notranslate"><span class="pre">'not</span> <span class="pre">minority'</span></code>: resample all classes but the minority class;</p>
+<p><code class="docutils literal notranslate"><span class="pre">'not</span> <span class="pre">majority'</span></code>: resample all classes but the majority class;</p>
+<p><code class="docutils literal notranslate"><span class="pre">'all'</span></code>: resample all classes;</p>
+<p><code class="docutils literal notranslate"><span class="pre">'auto'</span></code>: equivalent to <code class="docutils literal notranslate"><span class="pre">'not</span> <span class="pre">majority'</span></code>.</p>
+</div></blockquote>
+</li>
+<li><p class="first">When <code class="docutils literal notranslate"><span class="pre">dict</span></code>, the keys correspond to the targeted classes. The
+values correspond to the desired number of samples for each targeted
+class.</p>
+</li>
+<li><p class="first">When callable, function taking <code class="docutils literal notranslate"><span class="pre">y</span></code> and returns a <code class="docutils literal notranslate"><span class="pre">dict</span></code>. The keys
 correspond to the targeted classes. The values correspond to the
-desired number of samples.</li>
+desired number of samples for each class.</p>
+</li>
 </ul>
+</dd>
+<dt><strong>random_state</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, RandomState instance or None, optional (default=None)</span></dt>
+<dd><p class="first">Control the randomization of the algorithm
+- If int, <code class="docutils literal notranslate"><span class="pre">random_state</span></code> is the seed used by the random number</p>
+<blockquote>
+<div><p>generator;</p>
 </div></blockquote>
-<p><strong>random_state</strong> : int, RandomState instance or None, optional (default=None)</p>
-<blockquote class="last">
-<div><p>If int, <code class="docutils literal notranslate"><span class="pre">random_state</span></code> is the seed used by the random number
-generator; If <code class="docutils literal notranslate"><span class="pre">RandomState</span></code> instance, random_state is the random
-number generator; If <code class="docutils literal notranslate"><span class="pre">None</span></code>, the random number generator is the
-<code class="docutils literal notranslate"><span class="pre">RandomState</span></code> instance used by <code class="docutils literal notranslate"><span class="pre">np.random</span></code>.</p>
-</div></blockquote>
+<ul class="last simple">
+<li>If <code class="docutils literal notranslate"><span class="pre">RandomState</span></code> instance, random_state is the random number
+generator;</li>
+<li>If <code class="docutils literal notranslate"><span class="pre">None</span></code>, the random number generator is the <code class="docutils literal notranslate"><span class="pre">RandomState</span></code>
+instance used by <code class="docutils literal notranslate"><span class="pre">np.random</span></code>.</li>
+</ul>
+</dd>
+<dt><strong>ratio</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str, dict, or callable</span></dt>
+<dd><div class="first last deprecated">
+<p><span class="versionmodified">Deprecated since version 0.4: </span>Use the parameter <code class="docutils literal notranslate"><span class="pre">sampling_strategy</span></code> instead. It will be removed
+in 0.6.</p>
+</div>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -257,42 +280,43 @@ and
 <span class="gp">&gt;&gt;&gt; </span><span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">make_classification</span><span class="p">(</span><span class="n">n_classes</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">class_sep</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
 <span class="gp">... </span><span class="n">weights</span><span class="o">=</span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">],</span> <span class="n">n_informative</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">n_redundant</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">flip_y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
 <span class="gp">... </span><span class="n">n_features</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">n_clusters_per_class</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_samples</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Original dataset shape </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Counter</span><span class="p">(</span><span class="n">y</span><span class="p">)))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Original dataset shape </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">Counter</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
 <span class="go">Original dataset shape Counter({1: 900, 0: 100})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ros</span> <span class="o">=</span> <span class="n">RandomOverSampler</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">X_res</span><span class="p">,</span> <span class="n">y_res</span> <span class="o">=</span> <span class="n">ros</span><span class="o">.</span><span class="n">fit_sample</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Resampled dataset shape </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Counter</span><span class="p">(</span><span class="n">y_res</span><span class="p">)))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Resampled dataset shape </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">Counter</span><span class="p">(</span><span class="n">y_res</span><span class="p">))</span>
 <span class="go">Resampled dataset shape Counter({0: 900, 1: 900})</span>
 </pre></div>
 </div>
 <dl class="method">
 <dt id="imblearn.over_sampling.RandomOverSampler.__init__">
-<code class="descname">__init__</code><span class="sig-paren">(</span><em>ratio='auto'</em>, <em>random_state=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/2e5956a/imblearn/over_sampling/random_over_sampler.py#L78"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/imblearn/over_sampling/random_over_sampler.html#RandomOverSampler.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.over_sampling.RandomOverSampler.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>sampling_strategy='auto'</em>, <em>random_state=None</em>, <em>ratio=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/71ff0f6/imblearn/over_sampling/random_over_sampler.py#L69"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/imblearn/over_sampling/random_over_sampler.html#RandomOverSampler.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.over_sampling.RandomOverSampler.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="imblearn.over_sampling.RandomOverSampler.fit">
-<code class="descname">fit</code><span class="sig-paren">(</span><em>X</em>, <em>y</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/2e5956a/imblearn/base.py#L150"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.over_sampling.RandomOverSampler.fit" title="Permalink to this definition">¶</a></dt>
+<code class="descname">fit</code><span class="sig-paren">(</span><em>X</em>, <em>y</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/71ff0f6/imblearn/base.py#L168"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.over_sampling.RandomOverSampler.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find the classes statistics before to perform sampling.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>X</strong> : {array-like, sparse matrix}, shape (n_samples, n_features)</p>
-<blockquote>
-<div><p>Matrix containing the data which have to be sampled.</p>
-</div></blockquote>
-<p><strong>y</strong> : array-like, shape (n_samples,)</p>
-<blockquote>
-<div><p>Corresponding label for each sample in X.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>X</strong> <span class="classifier-delimiter">:</span> <span class="classifier">{array-like, sparse matrix}, shape (n_samples, n_features)</span></dt>
+<dd><p class="first last">Matrix containing the data which have to be sampled.</p>
+</dd>
+<dt><strong>y</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array-like, shape (n_samples,)</span></dt>
+<dd><p class="first last">Corresponding label for each sample in X.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>self</strong> : object,</p>
-<blockquote class="last">
-<div><p>Return self.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>self</strong> <span class="classifier-delimiter">:</span> <span class="classifier">object,</span></dt>
+<dd><p class="first last">Return self.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -301,30 +325,30 @@ and
 
 <dl class="method">
 <dt id="imblearn.over_sampling.RandomOverSampler.fit_sample">
-<code class="descname">fit_sample</code><span class="sig-paren">(</span><em>X</em>, <em>y</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/2e5956a/imblearn/base.py#L78"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.over_sampling.RandomOverSampler.fit_sample" title="Permalink to this definition">¶</a></dt>
+<code class="descname">fit_sample</code><span class="sig-paren">(</span><em>X</em>, <em>y</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/71ff0f6/imblearn/base.py#L80"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.over_sampling.RandomOverSampler.fit_sample" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit the statistics and resample the data directly.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>X</strong> : {array-like, sparse matrix}, shape (n_samples, n_features)</p>
-<blockquote>
-<div><p>Matrix containing the data which have to be sampled.</p>
-</div></blockquote>
-<p><strong>y</strong> : array-like, shape (n_samples,)</p>
-<blockquote>
-<div><p>Corresponding label for each sample in X.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>X</strong> <span class="classifier-delimiter">:</span> <span class="classifier">{array-like, sparse matrix}, shape (n_samples, n_features)</span></dt>
+<dd><p class="first last">Matrix containing the data which have to be sampled.</p>
+</dd>
+<dt><strong>y</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array-like, shape (n_samples,)</span></dt>
+<dd><p class="first last">Corresponding label for each sample in X.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>X_resampled</strong> : {array-like, sparse matrix}, shape (n_samples_new, n_features)</p>
-<blockquote>
-<div><p>The array containing the resampled data.</p>
-</div></blockquote>
-<p><strong>y_resampled</strong> : array-like, shape (n_samples_new,)</p>
-<blockquote class="last">
-<div><p>The corresponding label of <cite>X_resampled</cite></p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>X_resampled</strong> <span class="classifier-delimiter">:</span> <span class="classifier">{array-like, sparse matrix}, shape (n_samples_new, n_features)</span></dt>
+<dd><p class="first last">The array containing the resampled data.</p>
+</dd>
+<dt><strong>y_resampled</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array-like, shape (n_samples_new,)</span></dt>
+<dd><p class="first last">The corresponding label of <cite>X_resampled</cite></p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -333,23 +357,25 @@ and
 
 <dl class="method">
 <dt id="imblearn.over_sampling.RandomOverSampler.get_params">
-<code class="descname">get_params</code><span class="sig-paren">(</span><em>deep=True</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/2e5956a/imblearn/../../miniconda/envs/testenv/lib/python3.6/site-packages/sklearn/base.py#L213"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.over_sampling.RandomOverSampler.get_params" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_params</code><span class="sig-paren">(</span><em>deep=True</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/71ff0f6/imblearn/../../miniconda/envs/testenv/lib/python3.6/site-packages/sklearn/base.py#L213"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.over_sampling.RandomOverSampler.get_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get parameters for this estimator.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>deep</strong> : boolean, optional</p>
-<blockquote>
-<div><p>If True, will return the parameters for this estimator and
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>deep</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean, optional</span></dt>
+<dd><p class="first last">If True, will return the parameters for this estimator and
 contained subobjects that are estimators.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>params</strong> : mapping of string to any</p>
-<blockquote class="last">
-<div><p>Parameter names mapped to their values.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>params</strong> <span class="classifier-delimiter">:</span> <span class="classifier">mapping of string to any</span></dt>
+<dd><p class="first last">Parameter names mapped to their values.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -358,30 +384,30 @@ contained subobjects that are estimators.</p>
 
 <dl class="method">
 <dt id="imblearn.over_sampling.RandomOverSampler.sample">
-<code class="descname">sample</code><span class="sig-paren">(</span><em>X</em>, <em>y</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/2e5956a/imblearn/base.py#L39"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.over_sampling.RandomOverSampler.sample" title="Permalink to this definition">¶</a></dt>
+<code class="descname">sample</code><span class="sig-paren">(</span><em>X</em>, <em>y</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/71ff0f6/imblearn/base.py#L41"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.over_sampling.RandomOverSampler.sample" title="Permalink to this definition">¶</a></dt>
 <dd><p>Resample the dataset.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>X</strong> : {array-like, sparse matrix}, shape (n_samples, n_features)</p>
-<blockquote>
-<div><p>Matrix containing the data which have to be sampled.</p>
-</div></blockquote>
-<p><strong>y</strong> : array-like, shape (n_samples,)</p>
-<blockquote>
-<div><p>Corresponding label for each sample in X.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>X</strong> <span class="classifier-delimiter">:</span> <span class="classifier">{array-like, sparse matrix}, shape (n_samples, n_features)</span></dt>
+<dd><p class="first last">Matrix containing the data which have to be sampled.</p>
+</dd>
+<dt><strong>y</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array-like, shape (n_samples,)</span></dt>
+<dd><p class="first last">Corresponding label for each sample in X.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>X_resampled</strong> : {ndarray, sparse matrix}, shape (n_samples_new, n_features)</p>
-<blockquote>
-<div><p>The array containing the resampled data.</p>
-</div></blockquote>
-<p><strong>y_resampled</strong> : ndarray, shape (n_samples_new)</p>
-<blockquote class="last">
-<div><p>The corresponding label of <cite>X_resampled</cite></p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>X_resampled</strong> <span class="classifier-delimiter">:</span> <span class="classifier">{ndarray, sparse matrix}, shape (n_samples_new, n_features)</span></dt>
+<dd><p class="first last">The array containing the resampled data.</p>
+</dd>
+<dt><strong>y_resampled</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ndarray, shape (n_samples_new)</span></dt>
+<dd><p class="first last">The corresponding label of <cite>X_resampled</cite></p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -390,7 +416,7 @@ contained subobjects that are estimators.</p>
 
 <dl class="method">
 <dt id="imblearn.over_sampling.RandomOverSampler.set_params">
-<code class="descname">set_params</code><span class="sig-paren">(</span><em>**params</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/2e5956a/imblearn/../../miniconda/envs/testenv/lib/python3.6/site-packages/sklearn/base.py#L250"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.over_sampling.RandomOverSampler.set_params" title="Permalink to this definition">¶</a></dt>
+<code class="descname">set_params</code><span class="sig-paren">(</span><em>**params</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/71ff0f6/imblearn/../../miniconda/envs/testenv/lib/python3.6/site-packages/sklearn/base.py#L250"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.over_sampling.RandomOverSampler.set_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the parameters of this estimator.</p>
 <p>The method works on simple estimators as well as on nested objects
 (such as pipelines). The latter have parameters of the form
@@ -400,7 +426,11 @@ component of a nested object.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">self</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>self</strong></dt>
+<dd></dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -410,15 +440,19 @@ component of a nested object.</p>
 
 <div class="section" id="examples-using-imblearn-over-sampling-randomoversampler">
 <h2>Examples using <code class="docutils literal notranslate"><span class="pre">imblearn.over_sampling.RandomOverSampler</span></code><a class="headerlink" href="#examples-using-imblearn-over-sampling-randomoversampler" title="Permalink to this headline">¶</a></h2>
-<div class="sphx-glr-thumbcontainer" tooltip="In this face recognition example two faces are used from the LFW (Faces in the Wild) dataset. S..."><div class="figure" id="id1">
+<div class="sphx-glr-thumbcontainer" tooltip="This example shows the different usage of the parameter ``sampling_strategy`` for the different..."><div class="figure" id="id1">
+<img alt="../_images/sphx_glr_plot_sampling_target_usage_thumb.png" src="../_images/sphx_glr_plot_sampling_target_usage_thumb.png" />
+<p class="caption"><span class="caption-text"><span class="xref std std-ref">sphx_glr_auto_examples_plot_sampling_target_usage.py</span></span></p>
+</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="In this face recognition example two faces are used from the LFW (Faces in the Wild) dataset. S..."><div class="figure" id="id2">
 <img alt="../_images/sphx_glr_plot_over_sampling_benchmark_lfw_thumb.png" src="../_images/sphx_glr_plot_over_sampling_benchmark_lfw_thumb.png" />
 <p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/applications/plot_over_sampling_benchmark_lfw.html#sphx-glr-auto-examples-applications-plot-over-sampling-benchmark-lfw-py"><span class="std std-ref">Benchmark over-sampling methods in a face recognition task</span></a></span></p>
 </div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="An illustration of the random over-sampling method."><div class="figure" id="id2">
+</div><div class="sphx-glr-thumbcontainer" tooltip="An illustration of the random over-sampling method."><div class="figure" id="id3">
 <img alt="../_images/sphx_glr_plot_random_over_sampling_thumb.png" src="../_images/sphx_glr_plot_random_over_sampling_thumb.png" />
 <p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/over-sampling/plot_random_over_sampling.html#sphx-glr-auto-examples-over-sampling-plot-random-over-sampling-py"><span class="std std-ref">Random over-sampling</span></a></span></p>
 </div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="The following example attends to make a qualitative comparison between the different over-sampl..."><div class="figure" id="id3">
+</div><div class="sphx-glr-thumbcontainer" tooltip="The following example attends to make a qualitative comparison between the different over-sampl..."><div class="figure" id="id4">
 <img alt="../_images/sphx_glr_plot_comparison_over_sampling_thumb.png" src="../_images/sphx_glr_plot_comparison_over_sampling_thumb.png" />
 <p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/over-sampling/plot_comparison_over_sampling.html#sphx-glr-auto-examples-over-sampling-plot-comparison-over-sampling-py"><span class="std std-ref">Comparison of the different over-sampling algorithms</span></a></span></p>
 </div>
@@ -427,9 +461,7 @@ component of a nested object.</p>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -451,7 +483,7 @@ component of a nested object.</p>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -470,6 +502,7 @@ component of a nested object.</p>
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
             VERSION:'0.4.0.dev0',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -488,14 +521,13 @@ component of a nested object.</p>
     <script type="text/javascript" src="../_static/js/theme.js"></script>
   
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

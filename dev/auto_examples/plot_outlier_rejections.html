@@ -25,31 +25,21 @@
   
 
   
-  
     <link rel="stylesheet" href="../_static/css/imbalanced-learn.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
-  
-
-  
-        <link rel="author" title="About these documents"
-              href="../about.html"/>
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="imbalanced-learn 0.4.0.dev0 documentation" href="../index.html"/>
-        <link rel="up" title="General examples" href="index.html"/>
-        <link rel="next" title="Multiclass classification with under-sampling" href="applications/plot_multi_class_under_sampling.html"/>
-        <link rel="prev" title="Usage of the ratio parameter for the different algorithm" href="plot_ratio_usage.html"/> 
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Using sampling_strategy in resampling algorithms" href="plot_sampling_target_usage.html" />
+    <link rel="prev" title="General examples" href="index.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -107,8 +97,8 @@
 <p class="caption"><span class="caption-text">Tutorial - Examples</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">General examples</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="plot_ratio_usage.html">Usage of the <code class="docutils literal notranslate"><span class="pre">ratio</span></code> parameter for the different algorithm</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Customized sampler to implement an outlier rejections estimator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot_sampling_target_usage.html">Using <code class="docutils literal notranslate"><span class="pre">sampling_strategy</span></code> in resampling algorithms</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#examples-based-on-real-world-datasets">Examples based on real world datasets</a></li>
@@ -131,7 +121,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">imbalanced-learn</a>
@@ -139,9 +129,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -185,7 +176,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="customized-sampler-to-implement-an-outlier-rejections-estimator">
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Click <a class="reference internal" href="#sphx-glr-download-auto-examples-plot-outlier-rejections-py"><span class="std std-ref">here</span></a> to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="customized-sampler-to-implement-an-outlier-rejections-estimator">
 <span id="sphx-glr-auto-examples-plot-outlier-rejections-py"></span><h1>Customized sampler to implement an outlier rejections estimator<a class="headerlink" href="#customized-sampler-to-implement-an-outlier-rejections-estimator" title="Permalink to this headline">¶</a></h1>
 <p>This example illustrates the use of a custom sampler to implement an outlier
 rejections estimator. It can be used easily within a pipeline in which the
@@ -296,8 +291,8 @@ the current scikit-learn pipeline.</p>
 <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="View documentation for matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  0.779 seconds)</p>
-<div class="sphx-glr-footer class sphx-glr-footer-example docutils container">
+<p><strong>Total running time of the script:</strong> ( 0 minutes  0.815 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plot-outlier-rejections-py">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../_downloads/plot_outlier_rejections.py" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_outlier_rejections.py</span></code></a></div>
 <div class="sphx-glr-download docutils container">
@@ -308,18 +303,16 @@ the current scikit-learn pipeline.</p>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="applications/plot_multi_class_under_sampling.html" class="btn btn-neutral float-right" title="Multiclass classification with under-sampling" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="plot_sampling_target_usage.html" class="btn btn-neutral float-right" title="Using sampling_strategy in resampling algorithms" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="plot_ratio_usage.html" class="btn btn-neutral" title="Usage of the ratio parameter for the different algorithm" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral" title="General examples" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -332,7 +325,7 @@ the current scikit-learn pipeline.</p>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -351,6 +344,7 @@ the current scikit-learn pipeline.</p>
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
             VERSION:'0.4.0.dev0',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -369,14 +363,13 @@ the current scikit-learn pipeline.</p>
     <script type="text/javascript" src="../_static/js/theme.js"></script>
   
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

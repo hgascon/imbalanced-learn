@@ -25,31 +25,21 @@
   
 
   
-  
     <link rel="stylesheet" href="../_static/css/imbalanced-learn.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
-  
-
-  
-        <link rel="author" title="About these documents"
-              href="../about.html"/>
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="imbalanced-learn 0.4.0.dev0 documentation" href="../index.html"/>
-        <link rel="up" title="User Guide" href="../user_guide.html"/>
-        <link rel="next" title="9. Utilities for Developers" href="../developers_utils.html"/>
-        <link rel="prev" title="7. Metrics" href="../metrics.html"/> 
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="9. Utilities for Developers" href="../developers_utils.html" />
+    <link rel="prev" title="7. Metrics" href="../metrics.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -142,7 +132,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">imbalanced-learn</a>
@@ -150,9 +140,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -432,29 +423,31 @@ binarized. The following data sets are available:</p>
 <div class="section" id="imbalanced-generator">
 <span id="make-imbalanced"></span><h2>8.2. Imbalanced generator<a class="headerlink" href="#imbalanced-generator" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="../generated/imblearn.datasets.make_imbalance.html#imblearn.datasets.make_imbalance" title="imblearn.datasets.make_imbalance"><code class="xref py py-func docutils literal notranslate"><span class="pre">make_imbalance</span></code></a> turns an original dataset into an imbalanced
-dataset. This behaviour is driven by the parameter <code class="docutils literal notranslate"><span class="pre">ratio</span></code> which behave
-similarly to other resampling algorithm. <code class="docutils literal notranslate"><span class="pre">ratio</span></code> can be given as a dictionary
-where the key corresponds to the class and the value is the the number of
-samples in the class:</p>
+dataset. This behaviour is driven by the parameter <code class="docutils literal notranslate"><span class="pre">sampling_strategy</span></code> which
+behave similarly to other resampling algorithm. <code class="docutils literal notranslate"><span class="pre">sampling_strategy</span></code> can be
+given as a dictionary where the key corresponds to the class and the value is
+the number of samples in the class:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="k">import</span> <span class="n">load_iris</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">imblearn.datasets</span> <span class="k">import</span> <span class="n">make_imbalance</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">iris</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ratio</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="mi">40</span><span class="p">}</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">X_imb</span><span class="p">,</span> <span class="n">y_imb</span> <span class="o">=</span> <span class="n">make_imbalance</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span><span class="p">,</span> <span class="n">ratio</span><span class="o">=</span><span class="n">ratio</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sampling_strategy</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="mi">40</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">X_imb</span><span class="p">,</span> <span class="n">y_imb</span> <span class="o">=</span> <span class="n">make_imbalance</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span><span class="p">,</span>
+<span class="gp">... </span>                              <span class="n">sampling_strategy</span><span class="o">=</span><span class="n">sampling_strategy</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">Counter</span><span class="p">(</span><span class="n">y_imb</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
 <span class="go">[(0, 20), (1, 30), (2, 40)]</span>
 </pre></div>
 </div>
 <p>Note that all samples of a class are passed-through if the class is not mentioned
 in the dictionary:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ratio</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="mi">10</span><span class="p">}</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">X_imb</span><span class="p">,</span> <span class="n">y_imb</span> <span class="o">=</span> <span class="n">make_imbalance</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span><span class="p">,</span> <span class="n">ratio</span><span class="o">=</span><span class="n">ratio</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sampling_strategy</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="mi">10</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">X_imb</span><span class="p">,</span> <span class="n">y_imb</span> <span class="o">=</span> <span class="n">make_imbalance</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span><span class="p">,</span>
+<span class="gp">... </span>                              <span class="n">sampling_strategy</span><span class="o">=</span><span class="n">sampling_strategy</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">Counter</span><span class="p">(</span><span class="n">y_imb</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
 <span class="go">[(0, 10), (1, 50), (2, 50)]</span>
 </pre></div>
 </div>
 <p>Instead of a dictionary, a function can be defined and directly pass to
-<code class="docutils literal notranslate"><span class="pre">ratio</span></code>:</p>
+<code class="docutils literal notranslate"><span class="pre">sampling_strategy</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">ratio_multiplier</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">multiplier</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="mf">0.95</span><span class="p">}</span>
 <span class="gp">... </span>    <span class="n">target_stats</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
@@ -462,21 +455,19 @@ in the dictionary:</p>
 <span class="gp">... </span>        <span class="n">target_stats</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">value</span> <span class="o">*</span> <span class="n">multiplier</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
 <span class="gp">... </span>    <span class="k">return</span> <span class="n">target_stats</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">X_imb</span><span class="p">,</span> <span class="n">y_imb</span> <span class="o">=</span> <span class="n">make_imbalance</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span><span class="p">,</span>
-<span class="gp">... </span>                              <span class="n">ratio</span><span class="o">=</span><span class="n">ratio_multiplier</span><span class="p">)</span>
+<span class="gp">... </span>                              <span class="n">sampling_strategy</span><span class="o">=</span><span class="n">ratio_multiplier</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">Counter</span><span class="p">(</span><span class="n">y_imb</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
 <span class="go">[(0, 25), (1, 35), (2, 47)]</span>
 </pre></div>
 </div>
 <p>See <a class="reference internal" href="../auto_examples/datasets/plot_make_imbalance.html#sphx-glr-auto-examples-datasets-plot-make-imbalance-py"><span class="std std-ref">make_imbalance function</span></a> and
-<a class="reference internal" href="../auto_examples/plot_ratio_usage.html#sphx-glr-auto-examples-plot-ratio-usage-py"><span class="std std-ref">Usage of the ratio parameter for the different algorithm</span></a>.</p>
+<span class="xref std std-ref">sphx_glr_auto_examples_plot_sampling_strategy_usage.py</span>.</p>
 </div>
 </div>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -498,7 +489,7 @@ in the dictionary:</p>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -517,6 +508,7 @@ in the dictionary:</p>
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
             VERSION:'0.4.0.dev0',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -535,14 +527,13 @@ in the dictionary:</p>
     <script type="text/javascript" src="../_static/js/theme.js"></script>
   
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

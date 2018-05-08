@@ -25,29 +25,19 @@
   
 
   
-  
     <link rel="stylesheet" href="../../../_static/css/imbalanced-learn.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../../../_static/gallery.css" type="text/css" />
-  
-
-  
-        <link rel="author" title="About these documents"
-              href="../../../about.html"/>
-        <link rel="index" title="Index"
-              href="../../../genindex.html"/>
-        <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="imbalanced-learn 0.4.0.dev0 documentation" href="../../../index.html"/>
-        <link rel="up" title="Module code" href="../../index.html"/> 
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/gallery.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
 
   
   <script src="../../../_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -125,7 +115,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../../index.html">imbalanced-learn</a>
@@ -133,9 +123,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -165,8 +156,6 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
-        
       </li>
     
   </ul>
@@ -180,24 +169,29 @@
   <h1>Source code for imblearn.datasets.imbalance</h1><div class="highlight"><pre>
 <span></span><span class="sd">&quot;&quot;&quot;Transform a dataset into an imbalanced dataset.&quot;&quot;&quot;</span>
 
-
 <span class="c1"># Authors: Dayvid Oliveira</span>
 <span class="c1">#          Guillaume Lemaitre &lt;g.lemaitre58@gmail.com&gt;</span>
 <span class="c1">#          Christos Aridas</span>
 <span class="c1"># License: MIT</span>
 
 <span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
 <span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">Counter</span>
 
 <span class="kn">from</span> <span class="nn">sklearn.utils</span> <span class="k">import</span> <span class="n">check_X_y</span>
 
 <span class="kn">from</span> <span class="nn">..under_sampling.prototype_selection</span> <span class="k">import</span> <span class="n">RandomUnderSampler</span>
-<span class="kn">from</span> <span class="nn">..utils</span> <span class="k">import</span> <span class="n">check_ratio</span>
+<span class="kn">from</span> <span class="nn">..utils</span> <span class="k">import</span> <span class="n">check_sampling_strategy</span>
 
 <span class="n">LOGGER</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="make_imbalance"><a class="viewcode-back" href="../../../generated/imblearn.datasets.make_imbalance.html#imblearn.datasets.make_imbalance">[docs]</a><span class="k">def</span> <span class="nf">make_imbalance</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">ratio</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="make_imbalance"><a class="viewcode-back" href="../../../generated/imblearn.datasets.make_imbalance.html#imblearn.datasets.make_imbalance">[docs]</a><span class="k">def</span> <span class="nf">make_imbalance</span><span class="p">(</span><span class="n">X</span><span class="p">,</span>
+                   <span class="n">y</span><span class="p">,</span>
+                   <span class="n">sampling_strategy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                   <span class="n">ratio</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                   <span class="n">random_state</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                   <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Turns a dataset into an imbalanced dataset at specific ratio.</span>
 
 <span class="sd">    A simple toy dataset to visualize clustering and classification</span>
@@ -213,15 +207,21 @@
 <span class="sd">    y : ndarray, shape (n_samples, )</span>
 <span class="sd">        Corresponding label for each sample in X.</span>
 
-<span class="sd">    ratio : str, dict, or callable, optional (default=&#39;auto&#39;)</span>
+<span class="sd">    sampling_strategy : dict, or callable,</span>
 <span class="sd">        Ratio to use for resampling the data set.</span>
 
-<span class="sd">        - If ``dict``, the keys correspond to the targeted classes. The values</span>
-<span class="sd">          correspond to the desired number of samples. All samples will be</span>
-<span class="sd">          passed through if the class is not specified.</span>
-<span class="sd">        - If callable, function taking ``y`` and returns a ``dict``. The keys</span>
+<span class="sd">        - When ``dict``, the keys correspond to the targeted classes. The</span>
+<span class="sd">          values correspond to the desired number of samples for each targeted</span>
+<span class="sd">          class.</span>
+
+<span class="sd">        - When callable, function taking ``y`` and returns a ``dict``. The keys</span>
 <span class="sd">          correspond to the targeted classes. The values correspond to the</span>
-<span class="sd">          desired number of samples.</span>
+<span class="sd">          desired number of samples for each class.</span>
+
+<span class="sd">    ratio : str, dict, or callable</span>
+<span class="sd">        .. deprecated:: 0.4</span>
+<span class="sd">           Use the parameter ``sampling_strategy`` instead. It will be removed</span>
+<span class="sd">           in 0.6.</span>
 
 <span class="sd">    random_state : int, RandomState instance or None, optional (default=None)</span>
 <span class="sd">        If int, random_state is the seed used by the random number generator;</span>
@@ -230,7 +230,8 @@
 <span class="sd">        by np.random.</span>
 
 <span class="sd">    kwargs : dict, optional</span>
-<span class="sd">        Dictionary of additional keyword arguments to pass to ``ratio``.</span>
+<span class="sd">        Dictionary of additional keyword arguments to pass to</span>
+<span class="sd">        ``sampling_strategy``.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
@@ -245,7 +246,7 @@
 <span class="sd">    See</span>
 <span class="sd">    :ref:`sphx_glr_auto_examples_applications_plot_multi_class_under_sampling.py`,</span>
 <span class="sd">    :ref:`sphx_glr_auto_examples_datasets_plot_make_imbalance.py`, and</span>
-<span class="sd">    :ref:`sphx_glr_auto_examples_plot_ratio_usage.py`.</span>
+<span class="sd">    :ref:`sphx_glr_auto_examples_plot_sampling_strategy_usage.py`.</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
@@ -257,7 +258,8 @@
 <span class="sd">    &gt;&gt;&gt; X, y = data.data, data.target</span>
 <span class="sd">    &gt;&gt;&gt; print(&#39;Distribution before imbalancing: {}&#39;.format(Counter(y)))</span>
 <span class="sd">    Distribution before imbalancing: Counter({0: 50, 1: 50, 2: 50})</span>
-<span class="sd">    &gt;&gt;&gt; X_res, y_res = make_imbalance(X, y, ratio={0: 10, 1: 20, 2: 30},</span>
+<span class="sd">    &gt;&gt;&gt; X_res, y_res = make_imbalance(X, y,</span>
+<span class="sd">    ...                               sampling_strategy={0: 10, 1: 20, 2: 30},</span>
 <span class="sd">    ...                               random_state=42)</span>
 <span class="sd">    &gt;&gt;&gt; print(&#39;Distribution after imbalancing: {}&#39;.format(Counter(y_res)))</span>
 <span class="sd">    Distribution after imbalancing: Counter({2: 30, 1: 20, 0: 10})</span>
@@ -266,17 +268,28 @@
     <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">check_X_y</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
     <span class="n">target_stats</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
     <span class="c1"># restrict ratio to be a dict or a callable</span>
-    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ratio</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="ow">or</span> <span class="n">callable</span><span class="p">(</span><span class="n">ratio</span><span class="p">):</span>
-        <span class="n">ratio_</span> <span class="o">=</span> <span class="n">check_ratio</span><span class="p">(</span><span class="n">ratio</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;under-sampling&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="c1"># FIXME remove ratio at 0.6</span>
+    <span class="k">if</span> <span class="n">ratio</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;&#39;ratio&#39; has been deprecated in 0.4 and will be &quot;</span>
+                      <span class="s2">&quot;removed in 0.6. Use &#39;sampling_strategy&#39; instead.&quot;</span><span class="p">)</span>
+        <span class="n">sampling_strategy</span> <span class="o">=</span> <span class="n">ratio</span>
+    <span class="k">elif</span> <span class="n">sampling_strategy</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;make_imbalance() missing 1 required positional &quot;</span>
+                        <span class="s2">&quot;argument: &#39;sampling_strategy&#39;&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">sampling_strategy</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="ow">or</span> <span class="n">callable</span><span class="p">(</span><span class="n">sampling_strategy</span><span class="p">):</span>
+        <span class="n">sampling_strategy_</span> <span class="o">=</span> <span class="n">check_sampling_strategy</span><span class="p">(</span>
+            <span class="n">sampling_strategy</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;under-sampling&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;&#39;ratio&#39; has to be a dictionary or a function&quot;</span>
-                         <span class="s2">&quot; returning a dictionary. Got </span><span class="si">{}</span><span class="s2"> instead.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-                             <span class="nb">type</span><span class="p">(</span><span class="n">ratio</span><span class="p">)))</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;&#39;sampling_strategy&#39; has to be a dictionary or a &quot;</span>
+                         <span class="s2">&quot;function returning a dictionary. Got </span><span class="si">{}</span><span class="s2"> instead.&quot;</span>
+                         <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">sampling_strategy</span><span class="p">)))</span>
 
     <span class="n">LOGGER</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;The original target distribution in the dataset is: </span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span>
                 <span class="n">target_stats</span><span class="p">)</span>
-    <span class="n">rus</span> <span class="o">=</span> <span class="n">RandomUnderSampler</span><span class="p">(</span><span class="n">ratio</span><span class="o">=</span><span class="n">ratio_</span><span class="p">,</span> <span class="n">replacement</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-                             <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">)</span>
+    <span class="n">rus</span> <span class="o">=</span> <span class="n">RandomUnderSampler</span><span class="p">(</span>
+        <span class="n">sampling_strategy</span><span class="o">=</span><span class="n">sampling_strategy_</span><span class="p">,</span>
+        <span class="n">replacement</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">)</span>
     <span class="n">X_resampled</span><span class="p">,</span> <span class="n">y_resampled</span> <span class="o">=</span> <span class="n">rus</span><span class="o">.</span><span class="n">fit_sample</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
     <span class="n">LOGGER</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Make the dataset imbalanced: </span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">Counter</span><span class="p">(</span><span class="n">y_resampled</span><span class="p">))</span>
 
@@ -284,9 +297,7 @@
 </pre></div>
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -299,7 +310,7 @@
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -318,6 +329,7 @@
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
             VERSION:'0.4.0.dev0',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -336,14 +348,13 @@
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
   
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

@@ -1,4 +1,8 @@
+.. note::
+    :class: sphx-glr-download-link-note
 
+    Click :ref:`here <sphx_glr_download_auto_examples_under-sampling_plot_one_sided_selection.py>` to download the full example code
+.. rst-class:: sphx-glr-example-title
 
 .. _sphx_glr_auto_examples_under-sampling_plot_one_sided_selection.py:
 
@@ -81,8 +85,10 @@ An illustration of the one-sided selection method.
     plt.tight_layout()
     plt.show()
 
-**Total running time of the script:** ( 0 minutes  0.068 seconds)
+**Total running time of the script:** ( 0 minutes  0.108 seconds)
 
+
+.. _sphx_glr_download_auto_examples_under-sampling_plot_one_sided_selection.py:
 
 
 .. only :: html

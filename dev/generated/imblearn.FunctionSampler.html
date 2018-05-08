@@ -25,31 +25,21 @@
   
 
   
-  
     <link rel="stylesheet" href="../_static/css/imbalanced-learn.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
-  
-
-  
-        <link rel="author" title="About these documents"
-              href="../about.html"/>
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="imbalanced-learn 0.4.0.dev0 documentation" href="../index.html"/>
-        <link rel="up" title="imbalanced-learn API" href="../api.html"/>
-        <link rel="next" title="imblearn.pipeline.Pipeline" href="imblearn.pipeline.Pipeline.html"/>
-        <link rel="prev" title="imblearn.ensemble.EasyEnsemble" href="imblearn.ensemble.EasyEnsemble.html"/> 
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="imblearn.pipeline.Pipeline" href="imblearn.pipeline.Pipeline.html" />
+    <link rel="prev" title="imblearn.ensemble.EasyEnsemble" href="imblearn.ensemble.EasyEnsemble.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -144,7 +134,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">imbalanced-learn</a>
@@ -152,9 +142,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -202,28 +193,27 @@
 <h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">imblearn</span></code>.FunctionSampler<a class="headerlink" href="#imblearn-functionsampler" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="imblearn.FunctionSampler">
-<em class="property">class </em><code class="descclassname">imblearn.</code><code class="descname">FunctionSampler</code><span class="sig-paren">(</span><em>func=None</em>, <em>accept_sparse=True</em>, <em>kw_args=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/2e5956a/imblearn/base.py#L180"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/imblearn/base.html#FunctionSampler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.FunctionSampler" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">imblearn.</code><code class="descname">FunctionSampler</code><span class="sig-paren">(</span><em>func=None</em>, <em>accept_sparse=True</em>, <em>kw_args=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/71ff0f6/imblearn/base.py#L199"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/imblearn/base.html#FunctionSampler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.FunctionSampler" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construct a sampler from calling an arbitrary callable.</p>
 <p>Read more in the <a class="reference internal" href="../miscellaneous.html#function-sampler"><span class="std std-ref">User Guide</span></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>func</strong> : callable or None,</p>
-<blockquote>
-<div><p>The callable to use for the transformation. This will be passed the
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>func</strong> <span class="classifier-delimiter">:</span> <span class="classifier">callable or None,</span></dt>
+<dd><p class="first last">The callable to use for the transformation. This will be passed the
 same arguments as transform, with args and kwargs forwarded. If func is
 None, then func will be the identity function.</p>
-</div></blockquote>
-<p><strong>accept_sparse</strong> : bool, optional (default=True)</p>
-<blockquote>
-<div><p>Whether sparse input are supported. By default, sparse inputs are
+</dd>
+<dt><strong>accept_sparse</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool, optional (default=True)</span></dt>
+<dd><p class="first last">Whether sparse input are supported. By default, sparse inputs are
 supported.</p>
-</div></blockquote>
-<p><strong>kw_args</strong> : dict, optional (default=None)</p>
-<blockquote class="last">
-<div><p>The keyword argument expected by <code class="docutils literal notranslate"><span class="pre">func</span></code>.</p>
-</div></blockquote>
+</dd>
+<dt><strong>kw_args</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict, optional (default=None)</span></dt>
+<dd><p class="first last">The keyword argument expected by <code class="docutils literal notranslate"><span class="pre">func</span></code>.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -254,11 +244,12 @@ supported.</p>
 <p>We can also create a specific function which take some arguments.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">Counter</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">imblearn.under_sampling</span> <span class="k">import</span> <span class="n">RandomUnderSampler</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">ratio</span><span class="p">,</span> <span class="n">random_state</span><span class="p">):</span>
-<span class="gp">... </span>  <span class="k">return</span> <span class="n">RandomUnderSampler</span><span class="p">(</span><span class="n">ratio</span><span class="o">=</span><span class="n">ratio</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sampling_strategy</span><span class="p">,</span> <span class="n">random_state</span><span class="p">):</span>
+<span class="gp">... </span>  <span class="k">return</span> <span class="n">RandomUnderSampler</span><span class="p">(</span><span class="n">sampling_strategy</span><span class="o">=</span><span class="n">sampling_strategy</span><span class="p">,</span>
 <span class="gp">... </span>                            <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">)</span><span class="o">.</span><span class="n">fit_sample</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sampler</span> <span class="o">=</span> <span class="n">FunctionSampler</span><span class="p">(</span><span class="n">func</span><span class="o">=</span><span class="n">func</span><span class="p">,</span>
-<span class="gp">... </span>                          <span class="n">kw_args</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;ratio&#39;</span><span class="p">:</span> <span class="s1">&#39;auto&#39;</span><span class="p">,</span> <span class="s1">&#39;random_state&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">})</span>
+<span class="gp">... </span>                          <span class="n">kw_args</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;sampling_strategy&#39;</span><span class="p">:</span> <span class="s1">&#39;auto&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                                   <span class="s1">&#39;random_state&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">X_res</span><span class="p">,</span> <span class="n">y_res</span> <span class="o">=</span> <span class="n">sampler</span><span class="o">.</span><span class="n">fit_sample</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Resampled dataset shape </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
 <span class="gp">... </span>    <span class="nb">sorted</span><span class="p">(</span><span class="n">Counter</span><span class="p">(</span><span class="n">y_res</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">())))</span>
@@ -267,36 +258,36 @@ supported.</p>
 </div>
 <dl class="method">
 <dt id="imblearn.FunctionSampler.__init__">
-<code class="descname">__init__</code><span class="sig-paren">(</span><em>func=None</em>, <em>accept_sparse=True</em>, <em>kw_args=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/2e5956a/imblearn/base.py#L241"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/imblearn/base.html#FunctionSampler.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.FunctionSampler.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>func=None</em>, <em>accept_sparse=True</em>, <em>kw_args=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/71ff0f6/imblearn/base.py#L261"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/imblearn/base.html#FunctionSampler.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.FunctionSampler.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="imblearn.FunctionSampler.fit_sample">
-<code class="descname">fit_sample</code><span class="sig-paren">(</span><em>X</em>, <em>y</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/2e5956a/imblearn/base.py#L78"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.FunctionSampler.fit_sample" title="Permalink to this definition">¶</a></dt>
+<code class="descname">fit_sample</code><span class="sig-paren">(</span><em>X</em>, <em>y</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/71ff0f6/imblearn/base.py#L80"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.FunctionSampler.fit_sample" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit the statistics and resample the data directly.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>X</strong> : {array-like, sparse matrix}, shape (n_samples, n_features)</p>
-<blockquote>
-<div><p>Matrix containing the data which have to be sampled.</p>
-</div></blockquote>
-<p><strong>y</strong> : array-like, shape (n_samples,)</p>
-<blockquote>
-<div><p>Corresponding label for each sample in X.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>X</strong> <span class="classifier-delimiter">:</span> <span class="classifier">{array-like, sparse matrix}, shape (n_samples, n_features)</span></dt>
+<dd><p class="first last">Matrix containing the data which have to be sampled.</p>
+</dd>
+<dt><strong>y</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array-like, shape (n_samples,)</span></dt>
+<dd><p class="first last">Corresponding label for each sample in X.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>X_resampled</strong> : {array-like, sparse matrix}, shape (n_samples_new, n_features)</p>
-<blockquote>
-<div><p>The array containing the resampled data.</p>
-</div></blockquote>
-<p><strong>y_resampled</strong> : array-like, shape (n_samples_new,)</p>
-<blockquote class="last">
-<div><p>The corresponding label of <cite>X_resampled</cite></p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>X_resampled</strong> <span class="classifier-delimiter">:</span> <span class="classifier">{array-like, sparse matrix}, shape (n_samples_new, n_features)</span></dt>
+<dd><p class="first last">The array containing the resampled data.</p>
+</dd>
+<dt><strong>y_resampled</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array-like, shape (n_samples_new,)</span></dt>
+<dd><p class="first last">The corresponding label of <cite>X_resampled</cite></p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -305,23 +296,25 @@ supported.</p>
 
 <dl class="method">
 <dt id="imblearn.FunctionSampler.get_params">
-<code class="descname">get_params</code><span class="sig-paren">(</span><em>deep=True</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/2e5956a/imblearn/../../miniconda/envs/testenv/lib/python3.6/site-packages/sklearn/base.py#L213"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.FunctionSampler.get_params" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_params</code><span class="sig-paren">(</span><em>deep=True</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/71ff0f6/imblearn/../../miniconda/envs/testenv/lib/python3.6/site-packages/sklearn/base.py#L213"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.FunctionSampler.get_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get parameters for this estimator.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>deep</strong> : boolean, optional</p>
-<blockquote>
-<div><p>If True, will return the parameters for this estimator and
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>deep</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean, optional</span></dt>
+<dd><p class="first last">If True, will return the parameters for this estimator and
 contained subobjects that are estimators.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>params</strong> : mapping of string to any</p>
-<blockquote class="last">
-<div><p>Parameter names mapped to their values.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>params</strong> <span class="classifier-delimiter">:</span> <span class="classifier">mapping of string to any</span></dt>
+<dd><p class="first last">Parameter names mapped to their values.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -330,30 +323,30 @@ contained subobjects that are estimators.</p>
 
 <dl class="method">
 <dt id="imblearn.FunctionSampler.sample">
-<code class="descname">sample</code><span class="sig-paren">(</span><em>X</em>, <em>y</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/2e5956a/imblearn/base.py#L280"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/imblearn/base.html#FunctionSampler.sample"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.FunctionSampler.sample" title="Permalink to this definition">¶</a></dt>
+<code class="descname">sample</code><span class="sig-paren">(</span><em>X</em>, <em>y</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/71ff0f6/imblearn/base.py#L312"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/imblearn/base.html#FunctionSampler.sample"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.FunctionSampler.sample" title="Permalink to this definition">¶</a></dt>
 <dd><p>Resample the dataset.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>X</strong> : {array-like, sparse matrix}, shape (n_samples, n_features)</p>
-<blockquote>
-<div><p>Matrix containing the data which have to be sampled.</p>
-</div></blockquote>
-<p><strong>y</strong> : array-like, shape (n_samples,)</p>
-<blockquote>
-<div><p>Corresponding label for each sample in X.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>X</strong> <span class="classifier-delimiter">:</span> <span class="classifier">{array-like, sparse matrix}, shape (n_samples, n_features)</span></dt>
+<dd><p class="first last">Matrix containing the data which have to be sampled.</p>
+</dd>
+<dt><strong>y</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array-like, shape (n_samples,)</span></dt>
+<dd><p class="first last">Corresponding label for each sample in X.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>X_resampled</strong> : {ndarray, sparse matrix}, shape (n_samples_new, n_features)</p>
-<blockquote>
-<div><p>The array containing the resampled data.</p>
-</div></blockquote>
-<p><strong>y_resampled</strong> : ndarray, shape (n_samples_new)</p>
-<blockquote class="last">
-<div><p>The corresponding label of <cite>X_resampled</cite></p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>X_resampled</strong> <span class="classifier-delimiter">:</span> <span class="classifier">{ndarray, sparse matrix}, shape (n_samples_new, n_features)</span></dt>
+<dd><p class="first last">The array containing the resampled data.</p>
+</dd>
+<dt><strong>y_resampled</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ndarray, shape (n_samples_new)</span></dt>
+<dd><p class="first last">The corresponding label of <cite>X_resampled</cite></p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -362,7 +355,7 @@ contained subobjects that are estimators.</p>
 
 <dl class="method">
 <dt id="imblearn.FunctionSampler.set_params">
-<code class="descname">set_params</code><span class="sig-paren">(</span><em>**params</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/2e5956a/imblearn/../../miniconda/envs/testenv/lib/python3.6/site-packages/sklearn/base.py#L250"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.FunctionSampler.set_params" title="Permalink to this definition">¶</a></dt>
+<code class="descname">set_params</code><span class="sig-paren">(</span><em>**params</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/71ff0f6/imblearn/../../miniconda/envs/testenv/lib/python3.6/site-packages/sklearn/base.py#L250"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.FunctionSampler.set_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the parameters of this estimator.</p>
 <p>The method works on simple estimators as well as on nested objects
 (such as pipelines). The latter have parameters of the form
@@ -372,7 +365,11 @@ component of a nested object.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">self</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>self</strong></dt>
+<dd></dd>
+</dl>
+</td>
 </tr>
 </tbody>
 </table>
@@ -391,9 +388,7 @@ component of a nested object.</p>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -415,7 +410,7 @@ component of a nested object.</p>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -434,6 +429,7 @@ component of a nested object.</p>
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
             VERSION:'0.4.0.dev0',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -452,14 +448,13 @@ component of a nested object.</p>
     <script type="text/javascript" src="../_static/js/theme.js"></script>
   
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

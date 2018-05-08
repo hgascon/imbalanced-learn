@@ -1,4 +1,8 @@
+.. note::
+    :class: sphx-glr-download-link-note
 
+    Click :ref:`here <sphx_glr_download_auto_examples_under-sampling_plot_comparison_under_sampling.py>` to download the full example code
+.. rst-class:: sphx-glr-example-title
 
 .. _sphx_glr_auto_examples_under-sampling_plot_comparison_under_sampling.py:
 
@@ -228,9 +232,9 @@ nearest neighbors is the largest.
     X, y = create_dataset(n_samples=5000, weights=(0.1, 0.2, 0.7), class_sep=0.8)
 
     ax_arr = ((ax1, ax2), (ax3, ax4), (ax5, ax6))
-    for ax, sampler in zip(ax_arr, (NearMiss(version=1, random_state=0),
-                                    NearMiss(version=2, random_state=0),
-                                    NearMiss(version=3, random_state=0))):
+    for ax, sampler in zip(ax_arr, (NearMiss(version=1),
+                                    NearMiss(version=2),
+                                    NearMiss(version=3))):
         clf = make_pipeline(sampler, LinearSVC())
         clf.fit(X, y)
         plot_decision_function(X, y, clf, ax[0])
@@ -268,9 +272,9 @@ of the internal nearest neighors algorithm, increasing it at each iteration.
 
     ax_arr = ((ax1, ax2), (ax3, ax4), (ax5, ax6))
     for ax, sampler in zip(ax_arr, (
-            EditedNearestNeighbours(random_state=0),
-            RepeatedEditedNearestNeighbours(random_state=0),
-            AllKNN(random_state=0, allow_minority=True))):
+            EditedNearestNeighbours(),
+            RepeatedEditedNearestNeighbours(),
+            AllKNN(allow_minority=True))):
         clf = make_pipeline(sampler, LinearSVC())
         clf.fit(X, y)
         plot_decision_function(X, y, clf, ax[0])
@@ -311,7 +315,7 @@ nearest-neighbors to remove samples which do not agree with this rule.
     for ax, sampler in zip(ax_arr, (
             CondensedNearestNeighbour(random_state=0),
             OneSidedSelection(random_state=0),
-            NeighbourhoodCleaningRule(random_state=0))):
+            NeighbourhoodCleaningRule())):
         clf = make_pipeline(sampler, LinearSVC())
         clf.fit(X, y)
         plot_decision_function(X, y, clf, ax[0])
@@ -367,8 +371,10 @@ removed.
 
 
 
-**Total running time of the script:** ( 0 minutes  9.634 seconds)
+**Total running time of the script:** ( 0 minutes  10.107 seconds)
 
+
+.. _sphx_glr_download_auto_examples_under-sampling_plot_comparison_under_sampling.py:
 
 
 .. only :: html

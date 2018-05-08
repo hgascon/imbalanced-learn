@@ -25,31 +25,21 @@
   
 
   
-  
     <link rel="stylesheet" href="../_static/css/imbalanced-learn.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
-  
-
-  
-        <link rel="author" title="About these documents"
-              href="../about.html"/>
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="imbalanced-learn 0.4.0.dev0 documentation" href="../index.html"/>
-        <link rel="up" title="imbalanced-learn API" href="../api.html"/>
-        <link rel="next" title="imblearn.datasets.make_imbalance" href="imblearn.datasets.make_imbalance.html"/>
-        <link rel="prev" title="imblearn.metrics.geometric_mean_score" href="imblearn.metrics.geometric_mean_score.html"/> 
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="imblearn.datasets.make_imbalance" href="imblearn.datasets.make_imbalance.html" />
+    <link rel="prev" title="imblearn.metrics.geometric_mean_score" href="imblearn.metrics.geometric_mean_score.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -149,7 +139,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">imbalanced-learn</a>
@@ -157,9 +147,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -207,7 +198,7 @@
 <h1><a class="reference internal" href="../api.html#module-imblearn.metrics" title="imblearn.metrics"><code class="xref py py-mod docutils literal notranslate"><span class="pre">imblearn.metrics</span></code></a>.make_index_balanced_accuracy<a class="headerlink" href="#imblearn-metrics-make-index-balanced-accuracy" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="imblearn.metrics.make_index_balanced_accuracy">
-<code class="descclassname">imblearn.metrics.</code><code class="descname">make_index_balanced_accuracy</code><span class="sig-paren">(</span><em>alpha=0.1</em>, <em>squared=True</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/2e5956a/imblearn/metrics/classification.py#L649"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/imblearn/metrics/classification.html#make_index_balanced_accuracy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.metrics.make_index_balanced_accuracy" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">imblearn.metrics.</code><code class="descname">make_index_balanced_accuracy</code><span class="sig-paren">(</span><em>alpha=0.1</em>, <em>squared=True</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/71ff0f6/imblearn/metrics/classification.py#L651"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/imblearn/metrics/classification.html#make_index_balanced_accuracy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.metrics.make_index_balanced_accuracy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Balance any scoring function using the index balanced accuracy</p>
 <p>This factory function wraps scoring function to express it as the
 index balanced accuracy (IBA). You need to use this function to
@@ -220,22 +211,23 @@ cannot be computed.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>alpha</strong> : float, optional (default=0.1)</p>
-<blockquote>
-<div><p>Weighting factor.</p>
-</div></blockquote>
-<p><strong>squared</strong> : bool, optional (default=True)</p>
-<blockquote>
-<div><p>If <code class="docutils literal notranslate"><span class="pre">squared</span></code> is True, then the metric computed will be squared
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>alpha</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, optional (default=0.1)</span></dt>
+<dd><p class="first last">Weighting factor.</p>
+</dd>
+<dt><strong>squared</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool, optional (default=True)</span></dt>
+<dd><p class="first last">If <code class="docutils literal notranslate"><span class="pre">squared</span></code> is True, then the metric computed will be squared
 before to be weighted.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>iba_scoring_func</strong> : callable,</p>
-<blockquote class="last">
-<div><p>Returns the scoring metric decorated which will automatically compute
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>iba_scoring_func</strong> <span class="classifier-delimiter">:</span> <span class="classifier">callable,</span></dt>
+<dd><p class="first last">Returns the scoring metric decorated which will automatically compute
 the index balanced accuracy.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -243,10 +235,10 @@ the index balanced accuracy.</p>
 <p class="rubric">Notes</p>
 <p>See <a class="reference internal" href="../auto_examples/evaluation/plot_metrics.html#sphx-glr-auto-examples-evaluation-plot-metrics-py"><span class="std std-ref">Metrics specific to imbalanced learning</span></a>.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r40" rules="none">
+<table class="docutils citation" frame="void" id="rbfa4677096ce-1" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[R40]</a></td><td>García, Vicente, Javier Salvador Sánchez, and Ramón Alberto
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>García, Vicente, Javier Salvador Sánchez, and Ramón Alberto
 Mollineda. “On the effectiveness of preprocessing methods when dealing
 with different levels of class imbalance.” Knowledge-Based Systems 25.1
 (2012): 13-21.</td></tr>
@@ -275,9 +267,7 @@ with different levels of class imbalance.” Knowledge-Based Systems 25.1
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -299,7 +289,7 @@ with different levels of class imbalance.” Knowledge-Based Systems 25.1
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -318,6 +308,7 @@ with different levels of class imbalance.” Knowledge-Based Systems 25.1
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
             VERSION:'0.4.0.dev0',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -336,14 +327,13 @@ with different levels of class imbalance.” Knowledge-Based Systems 25.1
     <script type="text/javascript" src="../_static/js/theme.js"></script>
   
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

@@ -25,30 +25,21 @@
   
 
   
-  
     <link rel="stylesheet" href="../_static/css/imbalanced-learn.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
-  
-
-  
-        <link rel="author" title="About these documents"
-              href="../about.html"/>
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="imbalanced-learn 0.4.0.dev0 documentation" href="../index.html"/>
-        <link rel="next" title="Usage of the ratio parameter for the different algorithm" href="plot_ratio_usage.html"/>
-        <link rel="prev" title="imblearn.utils.hash_X_y" href="../generated/imblearn.utils.hash_X_y.html"/> 
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Customized sampler to implement an outlier rejections estimator" href="plot_outlier_rejections.html" />
+    <link rel="prev" title="imblearn.utils.hash_X_y" href="../generated/imblearn.utils.hash_X_y.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -106,8 +97,8 @@
 <p class="caption"><span class="caption-text">Tutorial - Examples</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">General examples</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="plot_ratio_usage.html">Usage of the <code class="docutils literal notranslate"><span class="pre">ratio</span></code> parameter for the different algorithm</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_outlier_rejections.html">Customized sampler to implement an outlier rejections estimator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot_sampling_target_usage.html">Using <code class="docutils literal notranslate"><span class="pre">sampling_strategy</span></code> in resampling algorithms</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="#examples-based-on-real-world-datasets">Examples based on real world datasets</a><ul>
@@ -184,7 +175,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">imbalanced-learn</a>
@@ -192,9 +183,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -239,15 +231,15 @@
   <div class="section" id="general-examples">
 <span id="id1"></span><h1>General examples<a class="headerlink" href="#general-examples" title="Permalink to this headline">¶</a></h1>
 <p>General-purpose and introductory examples for the <cite>imbalanced-learn</cite> toolbox.</p>
-<div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use the ``ratio`` parameter in the different examples. It illustrated..."><div class="figure" id="id5">
-<img alt="../_images/sphx_glr_plot_ratio_usage_thumb.png" src="../_images/sphx_glr_plot_ratio_usage_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="plot_ratio_usage.html#sphx-glr-auto-examples-plot-ratio-usage-py"><span class="std std-ref">Usage of the ratio parameter for the different algorithm</span></a></span></p>
+<div class="sphx-glr-thumbcontainer" tooltip="This example illustrates the use of a custom sampler to implement an outlier rejections estimat..."><div class="figure" id="id5">
+<img alt="../_images/sphx_glr_plot_outlier_rejections_thumb.png" src="../_images/sphx_glr_plot_outlier_rejections_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="plot_outlier_rejections.html#sphx-glr-auto-examples-plot-outlier-rejections-py"><span class="std std-ref">Customized sampler to implement an outlier rejections estimator</span></a></span></p>
 </div>
 </div><div class="toctree-wrapper compound">
 </div>
-<div class="sphx-glr-thumbcontainer" tooltip="This example illustrates the use of a custom sampler to implement an outlier rejections estimat..."><div class="figure" id="id6">
-<img alt="../_images/sphx_glr_plot_outlier_rejections_thumb.png" src="../_images/sphx_glr_plot_outlier_rejections_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="plot_outlier_rejections.html#sphx-glr-auto-examples-plot-outlier-rejections-py"><span class="std std-ref">Customized sampler to implement an outlier rejections estimator</span></a></span></p>
+<div class="sphx-glr-thumbcontainer" tooltip="This example shows the different usage of the parameter ``sampling_strategy`` for the different..."><div class="figure" id="id6">
+<img alt="../_images/sphx_glr_plot_sampling_target_usage_thumb.png" src="../_images/sphx_glr_plot_sampling_target_usage_thumb.png" />
+<p class="caption"><span class="caption-text"><span class="xref std std-ref">sphx_glr_auto_examples_plot_sampling_target_usage.py</span></span></p>
 </div>
 </div><div class="toctree-wrapper compound">
 </div>
@@ -487,15 +479,13 @@ The implemented methods can be categorized into 2 groups: (i) fixed under-sampli
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="plot_ratio_usage.html" class="btn btn-neutral float-right" title="Usage of the ratio parameter for the different algorithm" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="plot_outlier_rejections.html" class="btn btn-neutral float-right" title="Customized sampler to implement an outlier rejections estimator" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../generated/imblearn.utils.hash_X_y.html" class="btn btn-neutral" title="imblearn.utils.hash_X_y" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -511,7 +501,7 @@ The implemented methods can be categorized into 2 groups: (i) fixed under-sampli
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -530,6 +520,7 @@ The implemented methods can be categorized into 2 groups: (i) fixed under-sampli
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
             VERSION:'0.4.0.dev0',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -548,14 +539,13 @@ The implemented methods can be categorized into 2 groups: (i) fixed under-sampli
     <script type="text/javascript" src="../_static/js/theme.js"></script>
   
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

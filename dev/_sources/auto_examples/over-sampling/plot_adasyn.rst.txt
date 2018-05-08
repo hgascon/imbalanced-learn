@@ -1,4 +1,8 @@
+.. note::
+    :class: sphx-glr-download-link-note
 
+    Click :ref:`here <sphx_glr_download_auto_examples_over-sampling_plot_adasyn.py>` to download the full example code
+.. rst-class:: sphx-glr-example-title
 
 .. _sphx_glr_auto_examples_over-sampling_plot_adasyn.py:
 
@@ -83,8 +87,10 @@ Learning ADASYN method.
     plt.tight_layout(pad=3)
     plt.show()
 
-**Total running time of the script:** ( 0 minutes  0.144 seconds)
+**Total running time of the script:** ( 0 minutes  0.141 seconds)
 
+
+.. _sphx_glr_download_auto_examples_over-sampling_plot_adasyn.py:
 
 
 .. only :: html

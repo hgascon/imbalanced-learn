@@ -1,4 +1,8 @@
+.. note::
+    :class: sphx-glr-download-link-note
 
+    Click :ref:`here <sphx_glr_download_auto_examples_under-sampling_plot_illustration_tomek_links.py>` to download the full example code
+.. rst-class:: sphx-glr-example-title
 
 .. _sphx_glr_auto_examples_under-sampling_plot_illustration_tomek_links.py:
 
@@ -110,8 +114,9 @@ they are of different classes and are nearest neighbours of each other.
 
 
 We can run the ``TomekLinks`` sampling to remove the corresponding
-samples. If ``ratio='auto'`` only the sample from the majority class will be
-removed. If ``ratio='all'`` both samples will be removed.
+samples. If ``sampling_strategy='auto'`` only the sample from the majority
+class will be removed. If ``sampling_strategy='all'`` both samples will be
+removed.
 
 
 
@@ -127,8 +132,8 @@ removed. If ``ratio='all'`` both samples will be removed.
                  'Removing all samples')
     for ax, title, sampler in zip(ax_arr,
                                   title_arr,
-                                  [TomekLinks(ratio='auto', random_state=0),
-                                   TomekLinks(ratio='all', random_state=0)]):
+                                  [TomekLinks(sampling_strategy='auto'),
+                                   TomekLinks(sampling_strategy='all')]):
         X_res, y_res = sampler.fit_sample(np.vstack((X_minority, X_majority)),
                                           np.array([0] * X_minority.shape[0] +
                                                    [1] * X_majority.shape[0]))
@@ -156,8 +161,10 @@ removed. If ``ratio='all'`` both samples will be removed.
 
 
 
-**Total running time of the script:** ( 0 minutes  0.204 seconds)
+**Total running time of the script:** ( 0 minutes  0.205 seconds)
 
+
+.. _sphx_glr_download_auto_examples_under-sampling_plot_illustration_tomek_links.py:
 
 
 .. only :: html
