@@ -28,6 +28,26 @@ General-purpose and introductory examples for the `imbalanced-learn` toolbox.
    :hidden:
 
    /auto_examples/plot_outlier_rejections
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows the different usage of the parameter ``sampling_strategy`` for the different...">
+
+.. only:: html
+
+    .. figure:: /auto_examples/images/thumb/sphx_glr_plot_sampling_strategy_usage_thumb.png
+
+        :ref:`sphx_glr_auto_examples_plot_sampling_strategy_usage.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/plot_sampling_strategy_usage
 .. raw:: html
 
     <div style='clear:both'></div>
