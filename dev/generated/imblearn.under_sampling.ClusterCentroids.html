@@ -194,7 +194,7 @@
 <h1><a class="reference internal" href="../api.html#module-imblearn.under_sampling" title="imblearn.under_sampling"><code class="xref py py-mod docutils literal notranslate"><span class="pre">imblearn.under_sampling</span></code></a>.ClusterCentroids<a class="headerlink" href="#imblearn-under-sampling-clustercentroids" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="imblearn.under_sampling.ClusterCentroids">
-<em class="property">class </em><code class="descclassname">imblearn.under_sampling.</code><code class="descname">ClusterCentroids</code><span class="sig-paren">(</span><em>sampling_strategy='auto'</em>, <em>random_state=None</em>, <em>estimator=None</em>, <em>voting='auto'</em>, <em>n_jobs=1</em>, <em>ratio=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/1097966/imblearn/under_sampling/prototype_generation/cluster_centroids.py#L28"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/imblearn/under_sampling/prototype_generation/cluster_centroids.html#ClusterCentroids"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.under_sampling.ClusterCentroids" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">imblearn.under_sampling.</code><code class="descname">ClusterCentroids</code><span class="sig-paren">(</span><em>sampling_strategy='auto'</em>, <em>random_state=None</em>, <em>estimator=None</em>, <em>voting='auto'</em>, <em>n_jobs=1</em>, <em>ratio=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/155fe0f/imblearn/under_sampling/prototype_generation/cluster_centroids.py#L28"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/imblearn/under_sampling/prototype_generation/cluster_centroids.html#ClusterCentroids"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.under_sampling.ClusterCentroids" title="Permalink to this definition">¶</a></dt>
 <dd><p>Perform under-sampling by generating centroids based on
 clustering methods.</p>
 <p>Method that under samples the majority class by replacing a
@@ -245,12 +245,10 @@ desired number of samples for each class.</p>
 </ul>
 </dd>
 <dt><strong>random_state</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, RandomState instance or None, optional (default=None)</span></dt>
-<dd><p class="first">Control the randomization of the algorithm
-- If int, <code class="docutils literal notranslate"><span class="pre">random_state</span></code> is the seed used by the random number</p>
-<blockquote>
-<div><p>generator;</p>
-</div></blockquote>
+<dd><p class="first">Control the randomization of the algorithm</p>
 <ul class="last simple">
+<li>If int, <code class="docutils literal notranslate"><span class="pre">random_state</span></code> is the seed used by the random number
+generator;</li>
 <li>If <code class="docutils literal notranslate"><span class="pre">RandomState</span></code> instance, random_state is the random number
 generator;</li>
 <li>If <code class="docutils literal notranslate"><span class="pre">None</span></code>, the random number generator is the <code class="docutils literal notranslate"><span class="pre">RandomState</span></code>
@@ -309,13 +307,13 @@ in 0.6.</p>
 </div>
 <dl class="method">
 <dt id="imblearn.under_sampling.ClusterCentroids.__init__">
-<code class="descname">__init__</code><span class="sig-paren">(</span><em>sampling_strategy='auto'</em>, <em>random_state=None</em>, <em>estimator=None</em>, <em>voting='auto'</em>, <em>n_jobs=1</em>, <em>ratio=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/1097966/imblearn/under_sampling/prototype_generation/cluster_centroids.py#L96"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/imblearn/under_sampling/prototype_generation/cluster_centroids.html#ClusterCentroids.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.under_sampling.ClusterCentroids.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>sampling_strategy='auto'</em>, <em>random_state=None</em>, <em>estimator=None</em>, <em>voting='auto'</em>, <em>n_jobs=1</em>, <em>ratio=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/155fe0f/imblearn/under_sampling/prototype_generation/cluster_centroids.py#L96"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/imblearn/under_sampling/prototype_generation/cluster_centroids.html#ClusterCentroids.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.under_sampling.ClusterCentroids.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="imblearn.under_sampling.ClusterCentroids.fit">
-<code class="descname">fit</code><span class="sig-paren">(</span><em>X</em>, <em>y</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/1097966/imblearn/base.py#L168"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.under_sampling.ClusterCentroids.fit" title="Permalink to this definition">¶</a></dt>
+<code class="descname">fit</code><span class="sig-paren">(</span><em>X</em>, <em>y</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/155fe0f/imblearn/base.py#L168"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.under_sampling.ClusterCentroids.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find the classes statistics before to perform sampling.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -344,7 +342,7 @@ in 0.6.</p>
 
 <dl class="method">
 <dt id="imblearn.under_sampling.ClusterCentroids.fit_sample">
-<code class="descname">fit_sample</code><span class="sig-paren">(</span><em>X</em>, <em>y</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/1097966/imblearn/base.py#L80"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.under_sampling.ClusterCentroids.fit_sample" title="Permalink to this definition">¶</a></dt>
+<code class="descname">fit_sample</code><span class="sig-paren">(</span><em>X</em>, <em>y</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/155fe0f/imblearn/base.py#L80"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.under_sampling.ClusterCentroids.fit_sample" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit the statistics and resample the data directly.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -376,7 +374,7 @@ in 0.6.</p>
 
 <dl class="method">
 <dt id="imblearn.under_sampling.ClusterCentroids.get_params">
-<code class="descname">get_params</code><span class="sig-paren">(</span><em>deep=True</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/1097966/imblearn/../../miniconda/envs/testenv/lib/python3.6/site-packages/sklearn/base.py#L213"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.under_sampling.ClusterCentroids.get_params" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_params</code><span class="sig-paren">(</span><em>deep=True</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/155fe0f/imblearn/../../miniconda/envs/testenv/lib/python3.6/site-packages/sklearn/base.py#L213"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.under_sampling.ClusterCentroids.get_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get parameters for this estimator.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -403,7 +401,7 @@ contained subobjects that are estimators.</p>
 
 <dl class="method">
 <dt id="imblearn.under_sampling.ClusterCentroids.sample">
-<code class="descname">sample</code><span class="sig-paren">(</span><em>X</em>, <em>y</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/1097966/imblearn/base.py#L41"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.under_sampling.ClusterCentroids.sample" title="Permalink to this definition">¶</a></dt>
+<code class="descname">sample</code><span class="sig-paren">(</span><em>X</em>, <em>y</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/155fe0f/imblearn/base.py#L41"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.under_sampling.ClusterCentroids.sample" title="Permalink to this definition">¶</a></dt>
 <dd><p>Resample the dataset.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -435,7 +433,7 @@ contained subobjects that are estimators.</p>
 
 <dl class="method">
 <dt id="imblearn.under_sampling.ClusterCentroids.set_params">
-<code class="descname">set_params</code><span class="sig-paren">(</span><em>**params</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/1097966/imblearn/../../miniconda/envs/testenv/lib/python3.6/site-packages/sklearn/base.py#L250"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.under_sampling.ClusterCentroids.set_params" title="Permalink to this definition">¶</a></dt>
+<code class="descname">set_params</code><span class="sig-paren">(</span><em>**params</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn-contrib/imbalanced-learn/blob/155fe0f/imblearn/../../miniconda/envs/testenv/lib/python3.6/site-packages/sklearn/base.py#L250"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#imblearn.under_sampling.ClusterCentroids.set_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the parameters of this estimator.</p>
 <p>The method works on simple estimators as well as on nested objects
 (such as pipelines). The latter have parameters of the form
