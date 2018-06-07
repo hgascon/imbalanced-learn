@@ -106,7 +106,9 @@ First, we will create an imbalanced data set from a the iris data set.
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
+
+ .. code-block:: none
 
     Information of the original iris data set: 
      Counter({0: 50, 1: 50, 2: 50})
@@ -157,7 +159,9 @@ resampling and the number of samples in the minority class, respectively.
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
+
+ .. code-block:: none
 
     Information of the iris data set after making it balanced using a float and an under-sampling method: 
      sampling_strategy=0.8 
@@ -192,7 +196,9 @@ class, respectively.
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
+
+ .. code-block:: none
 
     Information of the iris data set after making it balanced using a float and an over-sampling method: 
      sampling_strategy=0.8 
@@ -250,7 +256,9 @@ Note that we are using multiple classes from now on.
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
+
+ .. code-block:: none
 
     Information of the iris data set after making it balanced by under-sampling: 
      sampling_strategy=not minority 
@@ -285,11 +293,13 @@ equalized even if targeted.
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
+
+ .. code-block:: none
 
     Information of the iris data set after making it balanced by cleaning sampling: 
      sampling_strategy=not minority 
-     y: Counter({2: 47, 1: 20, 0: 10})
+     y: Counter({2: 46, 1: 19, 0: 10})
 
 
 ``sampling_strategy`` as a ``dict``
@@ -343,7 +353,9 @@ algorithms but not for the **cleaning algorithms**. Use a ``list`` instead.
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
+
+ .. code-block:: none
 
     Information of the iris data set after making it balanced by under-sampling: 
      sampling_strategy={0: 10, 1: 15, 2: 20} 
@@ -382,11 +394,13 @@ otherwise.
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
+
+ .. code-block:: none
 
     Information of the iris data set after making it balanced by cleaning sampling: 
      sampling_strategy=[0, 1, 2] 
-     y: Counter({2: 47, 1: 20, 0: 10})
+     y: Counter({2: 46, 1: 19, 0: 10})
 
 
 ``sampling_strategy`` as a callable
@@ -428,14 +442,16 @@ number of samples for each class.
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
+
+ .. code-block:: none
 
     Information of the iris data set after balancing using a callable mode:
-     ratio=<function ratio_multiplier at 0x7f77a0a06bf8> 
+     ratio=<function ratio_multiplier at 0x7f4e240b9b70> 
      y: Counter({2: 44, 1: 14, 0: 10})
 
 
-**Total running time of the script:** ( 0 minutes  0.233 seconds)
+**Total running time of the script:** ( 0 minutes  0.239 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plot_sampling_strategy_usage.py:

@@ -188,15 +188,15 @@
 We provide an example to illustrate the use of those methods which do
 not differ from the binary case.</p>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Training</span> <span class="n">target</span> <span class="n">statistics</span><span class="p">:</span> <span class="n">Counter</span><span class="p">({</span><span class="mi">1</span><span class="p">:</span> <span class="mi">38</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="mi">38</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span> <span class="mi">17</span><span class="p">})</span>
-<span class="n">Testing</span> <span class="n">target</span> <span class="n">statistics</span><span class="p">:</span> <span class="n">Counter</span><span class="p">({</span><span class="mi">1</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span> <span class="mi">8</span><span class="p">})</span>
-                   <span class="n">pre</span>       <span class="n">rec</span>       <span class="n">spe</span>        <span class="n">f1</span>       <span class="n">geo</span>       <span class="n">iba</span>       <span class="n">sup</span>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Training target statistics: Counter({1: 38, 2: 38, 0: 17})
+Testing target statistics: Counter({1: 12, 2: 12, 0: 8})
+                   pre       rec       spe        f1       geo       iba       sup
 
-          <span class="mi">0</span>       <span class="mf">1.00</span>      <span class="mf">1.00</span>      <span class="mf">1.00</span>      <span class="mf">1.00</span>      <span class="mf">1.00</span>      <span class="mf">1.00</span>         <span class="mi">8</span>
-          <span class="mi">1</span>       <span class="mf">1.00</span>      <span class="mf">0.83</span>      <span class="mf">1.00</span>      <span class="mf">0.91</span>      <span class="mf">0.91</span>      <span class="mf">0.82</span>        <span class="mi">12</span>
-          <span class="mi">2</span>       <span class="mf">0.86</span>      <span class="mf">1.00</span>      <span class="mf">0.90</span>      <span class="mf">0.92</span>      <span class="mf">0.95</span>      <span class="mf">0.91</span>        <span class="mi">12</span>
+          0       1.00      1.00      1.00      1.00      1.00      1.00         8
+          1       1.00      0.83      1.00      0.91      0.91      0.82        12
+          2       0.86      1.00      0.90      0.92      0.95      0.91        12
 
-<span class="n">avg</span> <span class="o">/</span> <span class="n">total</span>       <span class="mf">0.95</span>      <span class="mf">0.94</span>      <span class="mf">0.96</span>      <span class="mf">0.94</span>      <span class="mf">0.95</span>      <span class="mf">0.90</span>        <span class="mi">32</span>
+avg / total       0.95      0.94      0.96      0.94      0.95      0.90        32
 </pre></div>
 </div>
 <div class="line-block">
@@ -241,7 +241,7 @@ not differ from the binary case.</p>
 <span class="k">print</span><span class="p">(</span><a href="../../generated/imblearn.metrics.classification_report_imbalanced.html#imblearn.metrics.classification_report_imbalanced" title="View documentation for imblearn.metrics.classification_report_imbalanced"><span class="n">classification_report_imbalanced</span></a><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)))</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  0.017 seconds)</p>
+<p><strong>Total running time of the script:</strong> ( 0 minutes  0.022 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-applications-plot-multi-class-under-sampling-py">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../../_downloads/plot_multi_class_under_sampling.py" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_multi_class_under_sampling.py</span></code></a></div>
@@ -315,9 +315,7 @@ not differ from the binary case.</p>
 
   <script type="text/javascript">
       jQuery(function () {
-          
-          SphinxRtdTheme.Navigation.enableSticky();
-          
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script> 
 

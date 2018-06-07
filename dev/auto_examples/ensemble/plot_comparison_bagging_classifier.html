@@ -291,30 +291,30 @@ classifiers.</p>
 </li>
 </ul>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Class</span> <span class="n">distribution</span> <span class="n">of</span> <span class="n">the</span> <span class="n">training</span> <span class="nb">set</span><span class="p">:</span> <span class="n">Counter</span><span class="p">({</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span> <span class="mi">1848</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">54</span><span class="p">})</span>
-<span class="n">Class</span> <span class="n">distribution</span> <span class="n">of</span> <span class="n">the</span> <span class="n">test</span> <span class="nb">set</span><span class="p">:</span> <span class="n">Counter</span><span class="p">({</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span> <span class="mi">615</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">19</span><span class="p">})</span>
-<span class="n">Classification</span> <span class="n">results</span> <span class="n">using</span> <span class="n">a</span> <span class="n">bagging</span> <span class="n">classifier</span> <span class="n">on</span> <span class="n">imbalanced</span> <span class="n">data</span>
-                   <span class="n">pre</span>       <span class="n">rec</span>       <span class="n">spe</span>        <span class="n">f1</span>       <span class="n">geo</span>       <span class="n">iba</span>       <span class="n">sup</span>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Class distribution of the training set: Counter({-1: 1848, 1: 54})
+Class distribution of the test set: Counter({-1: 615, 1: 19})
+Classification results using a bagging classifier on imbalanced data
+                   pre       rec       spe        f1       geo       iba       sup
 
-         <span class="o">-</span><span class="mi">1</span>       <span class="mf">0.97</span>      <span class="mf">1.00</span>      <span class="mf">0.00</span>      <span class="mf">0.98</span>      <span class="mf">0.00</span>      <span class="mf">0.00</span>       <span class="mi">615</span>
-          <span class="mi">1</span>       <span class="mf">0.00</span>      <span class="mf">0.00</span>      <span class="mf">1.00</span>      <span class="mf">0.00</span>      <span class="mf">0.00</span>      <span class="mf">0.00</span>        <span class="mi">19</span>
+         -1       0.97      1.00      0.00      0.98      0.00      0.00       615
+          1       0.00      0.00      1.00      0.00      0.00      0.00        19
 
-<span class="n">avg</span> <span class="o">/</span> <span class="n">total</span>       <span class="mf">0.94</span>      <span class="mf">0.97</span>      <span class="mf">0.03</span>      <span class="mf">0.95</span>      <span class="mf">0.00</span>      <span class="mf">0.00</span>       <span class="mi">634</span>
+avg / total       0.94      0.97      0.03      0.95      0.00      0.00       634
 
-<span class="n">Confusion</span> <span class="n">matrix</span><span class="p">,</span> <span class="n">without</span> <span class="n">normalization</span>
-<span class="p">[[</span><span class="mi">613</span>   <span class="mi">2</span><span class="p">]</span>
- <span class="p">[</span> <span class="mi">19</span>   <span class="mi">0</span><span class="p">]]</span>
-<span class="n">Classification</span> <span class="n">results</span> <span class="n">using</span> <span class="n">a</span> <span class="n">bagging</span> <span class="n">classifier</span> <span class="n">on</span> <span class="n">balanced</span> <span class="n">data</span>
-                   <span class="n">pre</span>       <span class="n">rec</span>       <span class="n">spe</span>        <span class="n">f1</span>       <span class="n">geo</span>       <span class="n">iba</span>       <span class="n">sup</span>
+Confusion matrix, without normalization
+[[613   2]
+ [ 19   0]]
+Classification results using a bagging classifier on balanced data
+                   pre       rec       spe        f1       geo       iba       sup
 
-         <span class="o">-</span><span class="mi">1</span>       <span class="mf">0.99</span>      <span class="mf">0.86</span>      <span class="mf">0.68</span>      <span class="mf">0.92</span>      <span class="mf">0.77</span>      <span class="mf">0.60</span>       <span class="mi">615</span>
-          <span class="mi">1</span>       <span class="mf">0.13</span>      <span class="mf">0.68</span>      <span class="mf">0.86</span>      <span class="mf">0.22</span>      <span class="mf">0.77</span>      <span class="mf">0.58</span>        <span class="mi">19</span>
+         -1       0.99      0.86      0.68      0.92      0.77      0.60       615
+          1       0.13      0.68      0.86      0.22      0.77      0.58        19
 
-<span class="n">avg</span> <span class="o">/</span> <span class="n">total</span>       <span class="mf">0.96</span>      <span class="mf">0.86</span>      <span class="mf">0.69</span>      <span class="mf">0.90</span>      <span class="mf">0.77</span>      <span class="mf">0.60</span>       <span class="mi">634</span>
+avg / total       0.96      0.86      0.69      0.90      0.77      0.60       634
 
-<span class="n">Confusion</span> <span class="n">matrix</span><span class="p">,</span> <span class="n">without</span> <span class="n">normalization</span>
-<span class="p">[[</span><span class="mi">530</span>  <span class="mi">85</span><span class="p">]</span>
- <span class="p">[</span>  <span class="mi">6</span>  <span class="mi">13</span><span class="p">]]</span>
+Confusion matrix, without normalization
+[[530  85]
+ [  6  13]]
 </pre></div>
 </div>
 <div class="section" id="turning-the-balanced-bagging-classifier-into-a-balanced-random-forest">
@@ -342,20 +342,20 @@ random forest by using a <code class="docutils literal notranslate"><span class=
 </div>
 <img alt="../../_images/sphx_glr_plot_comparison_bagging_classifier_003.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_comparison_bagging_classifier_003.png" />
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Classification</span> <span class="n">results</span> <span class="n">using</span> <span class="n">a</span> <span class="n">balanced</span> <span class="n">random</span> <span class="n">forest</span> <span class="n">classifier</span> <span class="n">on</span> <span class="n">imbalanced</span> <span class="n">data</span>
-                   <span class="n">pre</span>       <span class="n">rec</span>       <span class="n">spe</span>        <span class="n">f1</span>       <span class="n">geo</span>       <span class="n">iba</span>       <span class="n">sup</span>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Classification results using a balanced random forest classifier on imbalanced data
+                   pre       rec       spe        f1       geo       iba       sup
 
-         <span class="o">-</span><span class="mi">1</span>       <span class="mf">0.99</span>      <span class="mf">0.90</span>      <span class="mf">0.58</span>      <span class="mf">0.94</span>      <span class="mf">0.72</span>      <span class="mf">0.54</span>       <span class="mi">615</span>
-          <span class="mi">1</span>       <span class="mf">0.15</span>      <span class="mf">0.58</span>      <span class="mf">0.90</span>      <span class="mf">0.24</span>      <span class="mf">0.72</span>      <span class="mf">0.50</span>        <span class="mi">19</span>
+         -1       0.99      0.90      0.58      0.94      0.72      0.54       615
+          1       0.15      0.58      0.90      0.24      0.72      0.50        19
 
-<span class="n">avg</span> <span class="o">/</span> <span class="n">total</span>       <span class="mf">0.96</span>      <span class="mf">0.89</span>      <span class="mf">0.59</span>      <span class="mf">0.92</span>      <span class="mf">0.72</span>      <span class="mf">0.54</span>       <span class="mi">634</span>
+avg / total       0.96      0.89      0.59      0.92      0.72      0.54       634
 
-<span class="n">Confusion</span> <span class="n">matrix</span><span class="p">,</span> <span class="n">without</span> <span class="n">normalization</span>
-<span class="p">[[</span><span class="mi">554</span>  <span class="mi">61</span><span class="p">]</span>
- <span class="p">[</span>  <span class="mi">8</span>  <span class="mi">11</span><span class="p">]]</span>
+Confusion matrix, without normalization
+[[554  61]
+ [  8  11]]
 </pre></div>
 </div>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  6.027 seconds)</p>
+<p><strong>Total running time of the script:</strong> ( 0 minutes  7.797 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-ensemble-plot-comparison-bagging-classifier-py">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../../_downloads/plot_comparison_bagging_classifier.py" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_comparison_bagging_classifier.py</span></code></a></div>
@@ -430,9 +430,7 @@ random forest by using a <code class="docutils literal notranslate"><span class=
 
   <script type="text/javascript">
       jQuery(function () {
-          
-          SphinxRtdTheme.Navigation.enableSticky();
-          
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script> 
 

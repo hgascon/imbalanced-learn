@@ -131,7 +131,9 @@ classifiers.
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
+
+ .. code-block:: none
 
     Class distribution of the training set: Counter({-1: 1848, 1: 54})
     Class distribution of the test set: Counter({-1: 615, 1: 19})
@@ -194,7 +196,9 @@ Turning the balanced bagging classifier into a balanced random forest
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
+
+ .. code-block:: none
 
     Classification results using a balanced random forest classifier on imbalanced data
                        pre       rec       spe        f1       geo       iba       sup
@@ -209,7 +213,7 @@ Turning the balanced bagging classifier into a balanced random forest
      [  8  11]]
 
 
-**Total running time of the script:** ( 0 minutes  6.027 seconds)
+**Total running time of the script:** ( 0 minutes  7.797 seconds)
 
 
 .. _sphx_glr_download_auto_examples_ensemble_plot_comparison_bagging_classifier.py:

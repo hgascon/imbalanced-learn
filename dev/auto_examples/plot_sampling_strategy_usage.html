@@ -257,11 +257,11 @@ cleaning methods).</p>
 </li>
 </ul>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Information</span> <span class="n">of</span> <span class="n">the</span> <span class="n">original</span> <span class="n">iris</span> <span class="n">data</span> <span class="nb">set</span><span class="p">:</span>
- <span class="n">Counter</span><span class="p">({</span><span class="mi">0</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="mi">50</span><span class="p">})</span>
-<span class="n">Information</span> <span class="n">of</span> <span class="n">the</span> <span class="n">iris</span> <span class="n">data</span> <span class="nb">set</span> <span class="n">after</span> <span class="n">making</span> <span class="n">it</span> <span class="n">imbalanced</span> <span class="n">using</span> <span class="n">a</span> <span class="nb">dict</span><span class="p">:</span>
- <span class="n">sampling_strategy</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="mi">47</span><span class="p">}</span>
- <span class="n">y</span><span class="p">:</span> <span class="n">Counter</span><span class="p">({</span><span class="mi">2</span><span class="p">:</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span> <span class="mi">10</span><span class="p">})</span>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Information of the original iris data set:
+ Counter({0: 50, 1: 50, 2: 50})
+Information of the iris data set after making it imbalanced using a dict:
+ sampling_strategy={0: 10, 1: 20, 2: 47}
+ y: Counter({2: 47, 1: 20, 0: 10})
 </pre></div>
 </div>
 <div class="section" id="using-sampling-strategy-in-resampling-algorithms">
@@ -291,9 +291,9 @@ resampling and the number of samples in the minority class, respectively.</p>
 </div>
 <img alt="../_images/sphx_glr_plot_sampling_strategy_usage_003.png" class="sphx-glr-single-img" src="../_images/sphx_glr_plot_sampling_strategy_usage_003.png" />
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Information</span> <span class="n">of</span> <span class="n">the</span> <span class="n">iris</span> <span class="n">data</span> <span class="nb">set</span> <span class="n">after</span> <span class="n">making</span> <span class="n">it</span> <span class="n">balanced</span> <span class="n">using</span> <span class="n">a</span> <span class="nb">float</span> <span class="ow">and</span> <span class="n">an</span> <span class="n">under</span><span class="o">-</span><span class="n">sampling</span> <span class="n">method</span><span class="p">:</span>
- <span class="n">sampling_strategy</span><span class="o">=</span><span class="mf">0.8</span>
- <span class="n">y</span><span class="p">:</span> <span class="n">Counter</span><span class="p">({</span><span class="mi">2</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span> <span class="mi">10</span><span class="p">})</span>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Information of the iris data set after making it balanced using a float and an under-sampling method:
+ sampling_strategy=0.8
+ y: Counter({2: 12, 0: 10})
 </pre></div>
 </div>
 <p>For <strong>over-sampling methods</strong>, it correspond to the ratio
@@ -312,9 +312,9 @@ class, respectively.</p>
 </div>
 <img alt="../_images/sphx_glr_plot_sampling_strategy_usage_004.png" class="sphx-glr-single-img" src="../_images/sphx_glr_plot_sampling_strategy_usage_004.png" />
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Information</span> <span class="n">of</span> <span class="n">the</span> <span class="n">iris</span> <span class="n">data</span> <span class="nb">set</span> <span class="n">after</span> <span class="n">making</span> <span class="n">it</span> <span class="n">balanced</span> <span class="n">using</span> <span class="n">a</span> <span class="nb">float</span> <span class="ow">and</span> <span class="n">an</span> <span class="n">over</span><span class="o">-</span><span class="n">sampling</span> <span class="n">method</span><span class="p">:</span>
- <span class="n">sampling_strategy</span><span class="o">=</span><span class="mf">0.8</span>
- <span class="n">y</span><span class="p">:</span> <span class="n">Counter</span><span class="p">({</span><span class="mi">2</span><span class="p">:</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span> <span class="mi">37</span><span class="p">})</span>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Information of the iris data set after making it balanced using a float and an over-sampling method:
+ sampling_strategy=0.8
+ y: Counter({2: 47, 0: 37})
 </pre></div>
 </div>
 </div>
@@ -350,12 +350,12 @@ samples will be equalized.</p>
 </li>
 </ul>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Information</span> <span class="n">of</span> <span class="n">the</span> <span class="n">iris</span> <span class="n">data</span> <span class="nb">set</span> <span class="n">after</span> <span class="n">making</span> <span class="n">it</span> <span class="n">balanced</span> <span class="n">by</span> <span class="n">under</span><span class="o">-</span><span class="n">sampling</span><span class="p">:</span>
- <span class="n">sampling_strategy</span><span class="o">=</span><span class="ow">not</span> <span class="n">minority</span>
- <span class="n">y</span><span class="p">:</span> <span class="n">Counter</span><span class="p">({</span><span class="mi">0</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="mi">10</span><span class="p">})</span>
-<span class="n">Information</span> <span class="n">of</span> <span class="n">the</span> <span class="n">iris</span> <span class="n">data</span> <span class="nb">set</span> <span class="n">after</span> <span class="n">making</span> <span class="n">it</span> <span class="n">balanced</span> <span class="n">by</span> <span class="n">over</span><span class="o">-</span><span class="n">sampling</span><span class="p">:</span>
- <span class="n">sampling_strategy</span><span class="o">=</span><span class="ow">not</span> <span class="n">majority</span>
- <span class="n">y</span><span class="p">:</span> <span class="n">Counter</span><span class="p">({</span><span class="mi">0</span><span class="p">:</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="mi">47</span><span class="p">})</span>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Information of the iris data set after making it balanced by under-sampling:
+ sampling_strategy=not minority
+ y: Counter({0: 10, 1: 10, 2: 10})
+Information of the iris data set after making it balanced by over-sampling:
+ sampling_strategy=not majority
+ y: Counter({0: 47, 1: 47, 2: 47})
 </pre></div>
 </div>
 <p>With <strong>cleaning method</strong>, the number of samples in each class will not be
@@ -371,9 +371,9 @@ equalized even if targeted.</p>
 </div>
 <img alt="../_images/sphx_glr_plot_sampling_strategy_usage_007.png" class="sphx-glr-single-img" src="../_images/sphx_glr_plot_sampling_strategy_usage_007.png" />
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Information</span> <span class="n">of</span> <span class="n">the</span> <span class="n">iris</span> <span class="n">data</span> <span class="nb">set</span> <span class="n">after</span> <span class="n">making</span> <span class="n">it</span> <span class="n">balanced</span> <span class="n">by</span> <span class="n">cleaning</span> <span class="n">sampling</span><span class="p">:</span>
- <span class="n">sampling_strategy</span><span class="o">=</span><span class="ow">not</span> <span class="n">minority</span>
- <span class="n">y</span><span class="p">:</span> <span class="n">Counter</span><span class="p">({</span><span class="mi">2</span><span class="p">:</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span> <span class="mi">10</span><span class="p">})</span>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Information of the iris data set after making it balanced by cleaning sampling:
+ sampling_strategy=not minority
+ y: Counter({2: 46, 1: 19, 0: 10})
 </pre></div>
 </div>
 </div>
@@ -409,12 +409,12 @@ algorithms but not for the <strong>cleaning algorithms</strong>. Use a <code cla
 </li>
 </ul>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Information</span> <span class="n">of</span> <span class="n">the</span> <span class="n">iris</span> <span class="n">data</span> <span class="nb">set</span> <span class="n">after</span> <span class="n">making</span> <span class="n">it</span> <span class="n">balanced</span> <span class="n">by</span> <span class="n">under</span><span class="o">-</span><span class="n">sampling</span><span class="p">:</span>
- <span class="n">sampling_strategy</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="mi">20</span><span class="p">}</span>
- <span class="n">y</span><span class="p">:</span> <span class="n">Counter</span><span class="p">({</span><span class="mi">2</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span> <span class="mi">10</span><span class="p">})</span>
-<span class="n">Information</span> <span class="n">of</span> <span class="n">the</span> <span class="n">iris</span> <span class="n">data</span> <span class="nb">set</span> <span class="n">after</span> <span class="n">making</span> <span class="n">it</span> <span class="n">balanced</span> <span class="n">by</span> <span class="n">over</span><span class="o">-</span><span class="n">sampling</span><span class="p">:</span>
- <span class="n">sampling_strategy</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="mi">47</span><span class="p">}</span>
- <span class="n">y</span><span class="p">:</span> <span class="n">Counter</span><span class="p">({</span><span class="mi">2</span><span class="p">:</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span> <span class="mi">25</span><span class="p">})</span>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Information of the iris data set after making it balanced by under-sampling:
+ sampling_strategy={0: 10, 1: 15, 2: 20}
+ y: Counter({2: 20, 1: 15, 0: 10})
+Information of the iris data set after making it balanced by over-sampling:
+ sampling_strategy={0: 25, 1: 35, 2: 47}
+ y: Counter({2: 47, 1: 35, 0: 25})
 </pre></div>
 </div>
 </div>
@@ -434,9 +434,9 @@ otherwise.</p>
 </div>
 <img alt="../_images/sphx_glr_plot_sampling_strategy_usage_010.png" class="sphx-glr-single-img" src="../_images/sphx_glr_plot_sampling_strategy_usage_010.png" />
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Information</span> <span class="n">of</span> <span class="n">the</span> <span class="n">iris</span> <span class="n">data</span> <span class="nb">set</span> <span class="n">after</span> <span class="n">making</span> <span class="n">it</span> <span class="n">balanced</span> <span class="n">by</span> <span class="n">cleaning</span> <span class="n">sampling</span><span class="p">:</span>
- <span class="n">sampling_strategy</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
- <span class="n">y</span><span class="p">:</span> <span class="n">Counter</span><span class="p">({</span><span class="mi">2</span><span class="p">:</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span> <span class="mi">10</span><span class="p">})</span>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Information of the iris data set after making it balanced by cleaning sampling:
+ sampling_strategy=[0, 1, 2]
+ y: Counter({2: 46, 1: 19, 0: 10})
 </pre></div>
 </div>
 </div>
@@ -466,12 +466,12 @@ number of samples for each class.</p>
 </div>
 <img alt="../_images/sphx_glr_plot_sampling_strategy_usage_011.png" class="sphx-glr-single-img" src="../_images/sphx_glr_plot_sampling_strategy_usage_011.png" />
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Information</span> <span class="n">of</span> <span class="n">the</span> <span class="n">iris</span> <span class="n">data</span> <span class="nb">set</span> <span class="n">after</span> <span class="n">balancing</span> <span class="n">using</span> <span class="n">a</span> <span class="n">callable</span> <span class="n">mode</span><span class="p">:</span>
- <span class="n">ratio</span><span class="o">=&lt;</span><span class="n">function</span> <span class="n">ratio_multiplier</span> <span class="n">at</span> <span class="mh">0x7f77a0a06bf8</span><span class="o">&gt;</span>
- <span class="n">y</span><span class="p">:</span> <span class="n">Counter</span><span class="p">({</span><span class="mi">2</span><span class="p">:</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span> <span class="mi">10</span><span class="p">})</span>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Information of the iris data set after balancing using a callable mode:
+ ratio=&lt;function ratio_multiplier at 0x7f4e240b9b70&gt;
+ y: Counter({2: 44, 1: 14, 0: 10})
 </pre></div>
 </div>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  0.233 seconds)</p>
+<p><strong>Total running time of the script:</strong> ( 0 minutes  0.239 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plot-sampling-strategy-usage-py">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../_downloads/plot_sampling_strategy_usage.py" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_sampling_strategy_usage.py</span></code></a></div>
@@ -547,9 +547,7 @@ number of samples for each class.</p>
 
   <script type="text/javascript">
       jQuery(function () {
-          
-          SphinxRtdTheme.Navigation.enableSticky();
-          
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script> 
 

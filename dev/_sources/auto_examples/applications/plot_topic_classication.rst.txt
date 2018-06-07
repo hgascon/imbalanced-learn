@@ -81,7 +81,9 @@ than the majority class.
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
+
+ .. code-block:: none
 
     Training class distributions summary: Counter({2: 593, 1: 584, 0: 480, 3: 377})
     Test class distributions summary: Counter({2: 394, 1: 389, 0: 319, 3: 251})
@@ -115,7 +117,9 @@ imbalanced.
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
+
+ .. code-block:: none
 
     pre       rec       spe        f1       geo       iba       sup
 
@@ -174,19 +178,21 @@ slightly better.
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
+
+ .. code-block:: none
 
     pre       rec       spe        f1       geo       iba       sup
 
-              0       0.69      0.89      0.88      0.78      0.88      0.78       319
-              1       0.98      0.85      0.99      0.91      0.92      0.84       389
-              2       0.95      0.89      0.98      0.92      0.94      0.87       394
-              3       0.80      0.73      0.96      0.76      0.83      0.68       251
+              0       0.70      0.91      0.88      0.79      0.90      0.80       319
+              1       0.98      0.85      0.99      0.91      0.92      0.83       389
+              2       0.94      0.90      0.98      0.92      0.94      0.87       394
+              3       0.81      0.74      0.96      0.77      0.84      0.69       251
 
-    avg / total       0.87      0.85      0.95      0.85      0.90      0.80      1353
+    avg / total       0.87      0.86      0.96      0.86      0.90      0.81      1353
 
 
-**Total running time of the script:** ( 0 minutes  17.283 seconds)
+**Total running time of the script:** ( 0 minutes  17.230 seconds)
 
 
 .. _sphx_glr_download_auto_examples_applications_plot_topic_classication.py:

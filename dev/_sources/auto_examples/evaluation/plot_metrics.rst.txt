@@ -82,7 +82,9 @@ the balancing of the dataset.
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
+
+ .. code-block:: none
 
     The geometric mean is 0.9262633940760341
 
@@ -118,13 +120,15 @@ imbalanced learning problems.
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
+
+ .. code-block:: none
 
     The IBA using alpha = 0.1 and the geometric mean: 0.8579638752052544
     The IBA using alpha = 0.5 and the geometric mean: 0.8579638752052544
 
 
-**Total running time of the script:** ( 0 minutes  0.446 seconds)
+**Total running time of the script:** ( 0 minutes  0.444 seconds)
 
 
 .. _sphx_glr_download_auto_examples_evaluation_plot_metrics.py:
