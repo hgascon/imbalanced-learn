@@ -54,10 +54,10 @@ the current scikit-learn pipeline.
 
                  precision    recall  f1-score   support
 
-              0       0.88      1.00      0.93        50
-              1       1.00      0.86      0.92        50
+              0       0.85      1.00      0.92        50
+              1       1.00      0.82      0.90        50
 
-    avg / total       0.94      0.93      0.93       100
+    avg / total       0.92      0.91      0.91       100
 
 
 
@@ -145,7 +145,7 @@ the current scikit-learn pipeline.
 
     plt.show()
 
-**Total running time of the script:** ( 0 minutes  0.886 seconds)
+**Total running time of the script:** ( 0 minutes  0.881 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plot_outlier_rejections.py:
